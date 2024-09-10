@@ -6,4 +6,7 @@ https://ldjam.com
 
 If you are interested in joining the collab for this Jam, please PR your contributor profile using this [template](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md). You will be responsible for maintaining this file.
 
+## Active Status:
+Game Engine/Framework selection is **open**. Please visit this [discussion](https://github.com/haxecollab/ludum-dare-56/discussions/1) to make your opinion heard before the first round of voting starts on September 14th.
+
 (Readme is a work-in-progress so please check back later!)
