@@ -8,7 +8,7 @@ _Programmer, Dad, nerd, and tinkerer of all things digital._
 
 ## Personal Links
 - **GitHub**: [Dimensionscape](https://github.com/dimensionscape)
-- **YouTube**: [Your YouTube Channel](https://www.youtube.com/@dimensionscape)
+- **YouTube**: [@Dimensionscape](https://www.youtube.com/@dimensionscape)
 - **Other**: [OpenFL](https://www.openfl.org)
 
 ## Responsibilities
