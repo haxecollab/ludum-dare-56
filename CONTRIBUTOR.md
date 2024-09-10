@@ -29,7 +29,7 @@ Refer to [Template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/cre
 
 Contributors who make consistent, meaningful contributions to the project will be given:
 - **Write Access**: For contributors who actively submit pull requests and help with project organization.
-- **Maintainer Access**: For contributors who demonstrate a high level of commitment to the project over time.
+- **Maintainer Access**: For contributors who demonstrate a high level of commitment to the project.
 
 ## Merging Pull Requests
 
