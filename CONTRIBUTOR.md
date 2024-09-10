@@ -23,7 +23,7 @@ Each contributor should provide their own profile in `/credits/`, including:
    - **Responsibilities in the project**
    - **Additional comments (optional)**
 
-Refer to [Template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md) for the format.
+Refer to [template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md) for the format.
 
 ## Access Levels
 
