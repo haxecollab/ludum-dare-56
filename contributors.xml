@@ -25,4 +25,15 @@
 			<link title="Letterboxd">https://letterboxd.com/logo4poop</link>
 		</links>
 	</contributor>
+
+	<contributor>
+		<name>LeonGamerPS1</name>
+		<github>leongamerps1</github>
+		<description>HaxeFlixel and Roblox Studio Developer, maybe even a little bit of C#</description>
+		<role>Programmer</role>
+		<links>
+			<link title="Youtube: Untitled User (formerly known as benhzuuuuuuuuu)">https://www.youtube.com/@untitiled_user</link>
+			<link title="Github: LeonGamerPS1">github.com/LeonGamerPS1/</link>
+		</links>
+	</contributor>
 </credits>
