@@ -12,7 +12,7 @@ Welcome to the Ludum Dare 56 open-source project! This repository is a collabora
    - Music and sound effects
    - Testing and debugging
    - Project management
-3. **Submit Your Contributor Profile**: After your first contribution, submit your own profile to `/credits/` based on the [template.md]([./credits/Template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md)). Use your GitHub username as the file name (e.g., `yourusername.md`). It's your responsibility to keep this file up to date.
+3. **Submit Your Contributor Profile**: After your first contribution, submit your own profile to `/credits/` based on the [template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md)). Use your GitHub username as the file name (e.g., `yourusername.md`). It's your responsibility to keep this file up to date.
 
 ### Contributor Profile
 
@@ -24,6 +24,9 @@ Each contributor should provide their own profile in `/credits/`, including:
    - **Additional comments (optional)**
 
 Refer to [template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md) for the format.
+
+***Note: In order to participate in early voting(Framework, Game design, etc), please PR your contributor file immediately to be considered a collab member.
+You may becomes a contributor at any time before the jam ends!*** 
 
 ## Access Levels
 
