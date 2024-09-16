@@ -6,7 +6,7 @@
 ## Description (Optional)
 _A short description about yourself, your background, or anything you'd like to share._
 
-## Personal Links
+## Personal Links (Optional)
 - **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
 - **Twitch**: [Your Twitch Channel](https://www.twitch.tv/yourusername)
 - **YouTube**: [Your YouTube Channel](https://www.youtube.com/c/yourusername)
