@@ -14,4 +14,15 @@
 			<link title="OpenFL">https://www.openfl.org/</link>
 		</links>
 	</contributor>
+	
+	<contributor>
+		<name>logo</name>
+		<github>l0go</github>
+		<description>Proud Haxe evangelist and reluctant Rust developer</description>
+		<role>TBD</role>
+		<links>
+			<link title="Mastodon">https://haxe.social/@logo</link>
+			<link title="Letterboxd">https://letterboxd.com/logo4poop</link>
+		</links>
+	</contributor>
 </credits>
