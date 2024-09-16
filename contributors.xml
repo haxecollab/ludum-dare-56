@@ -1,0 +1,17 @@
+<credits>
+	<!-- 
+		Add yourself to this document. Only the Name, Github, Description, and Role fields are required.
+		Need help? Ask in the Haxe discord!
+	-->
+
+	<contributor>
+		<name>Chris Speciale</name>
+		<github>Dimensionscape</github>
+		<description>Programmer, Dad, nerd, and tinkerer of all things digital</description>
+		<role>TBD</role>
+		<links>
+			<link title="Youtube">https://www.youtube.com/@dimensionscape</link>
+			<link title="OpenFL">https://www.openfl.org/</link>
+		</links>
+	</contributor>
+</credits>

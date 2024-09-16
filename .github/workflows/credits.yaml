@@ -1,0 +1,25 @@
+name: Generate credits
+on:
+  push:
+    branches:
+      - main
+      - actions
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.6
+      - name: Generate Credits
+        working-directory: .github/workflows/credits-gen
+        run: |
+          haxe build.hxml
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Add new contributors
