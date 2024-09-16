@@ -23,3 +23,7 @@ _A short description about yourself, your background, or anything you'd like to 
 
 ## Additional Comments (Optional)
 _Any additional comments or shout-outs you’d like to include._
+
+##Vote Record
+- **Tech**: _Your vote_ (e.g. HaxeFlixel/Ceramic)
+_Any votes will be submitted through your contributor file_
