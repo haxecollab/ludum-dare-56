@@ -9,6 +9,9 @@ If you are interested in joining the collab for this Jam, please read the visit 
 **You must submit a PR for your contributor file to be considered a member of the jam entry or cast votes!**
 
 ## Active Status
-Game Engine/Framework selection is **open**. Please visit this [discussion](https://github.com/haxecollab/ludum-dare-56/discussions/1) to make your opinion heard before the first round of voting.
+Game Engine/Framework selection is **open**. Please visit this [discussion](https://github.com/haxecollab/ludum-dare-56/discussions/1) to make your opinion heard and nominate a selection.
 
+Genre constraints selection is **open**. Please visit this [discussion](https://github.com/haxecollab/ludum-dare-56/discussions/7) to make your opinion heard and nominate a selection.
+
+https://github.com/haxecollab/ludum-dare-56/discussions/7
 (Readme is a work-in-progress so please check back later!)

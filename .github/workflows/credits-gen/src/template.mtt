@@ -1,0 +1,14 @@
+# ::name::
+[GitHub](https://github.com/::github::)
+## Description
+::description::
+
+## Role
+::role::
+
+::if hasLinks::
+## Personal Links::foreach links::
+- [::title::](::link::)::end::
+::end::
+
+<sup><sub>This document was automatically generated from the [contributors.xml](https://github.com/haxecollab/ludum-dare-56/blob/main/contributors.xml) file</sub></sup>
