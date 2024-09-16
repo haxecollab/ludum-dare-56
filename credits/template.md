@@ -26,4 +26,5 @@ _Any additional comments or shout-outs you’d like to include._
 
 ## Vote Record (Optional)
 - **Tech**: _Your vote_ (e.g. HaxeFlixel/Ceramic)
+
 _Any votes will be submitted through your contributor file_
