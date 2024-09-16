@@ -24,7 +24,9 @@ Each contributor should provide their own profile in `/credits/`, including:
    - **Additional comments (optional)**
 
 Refer to [template.md](https://github.com/haxecollab/ludum-dare-56/blob/main/credits/template.md) for the format.
-***Note: In order to participate in early voting(Framework, Game design, etc), please PR your contributor file immediately to be considered a collab member.***
+
+***Note: In order to participate in early voting(Framework, Game design, etc), please PR your contributor file immediately to be considered a collab member.
+You may becomes a contributor at any time before the jam ends!*** 
 
 ## Access Levels
 
