@@ -7,7 +7,7 @@
 _Programmer, funny and cool :D_
 
 ## Personal Links (Optional)
-- **GitHub**: [LeonGamerPS1](https://github.com/LeonGamerPS1)
+- **GitHub**: [LeonGamerPS1](https://github.com/LeonGamerPS1) 
 - **YouTube**: [benhzuuuuuuuuu (now known as untitled user)](https://www.youtube.com/@untitiled_user)
 
 
