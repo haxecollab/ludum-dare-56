@@ -25,4 +25,18 @@
 			<link title="Letterboxd">https://letterboxd.com/logo4poop</link>
 		</links>
 	</contributor>
+
+	<contributor>
+		<name>Jérémy Faivre</name>
+		<github>jeremyfa</github>
+		<description>Created Ceramic, makes games, apps, creative code and music</description>
+		<role>TBD (offered to make music, could participate in programming if inspired too)</role>
+		<links>
+			<link title="Mastodon">https://mastodon.gamedev.place/@jeremyfa</link>
+			<link title="Ceramic">https://ceramic-engine.com</link>
+			<link title="Soundcloud">https://soundcloud.com/jeremyfa</link>
+			<link title="X / Twitter">https://x.com/jeremyfaivre</link>
+			<link title="Instagram">https://instagram.com/jeremyfa</link>
+		</links>
+	</contributor>
 </credits>
