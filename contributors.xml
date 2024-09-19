@@ -34,6 +34,17 @@
 		<links>
 			<link title="Youtube: Untitled User (formerly known as benhzuuuuuuuuu)">https://www.youtube.com/@untitiled_user</link>
 			<link title="Github: LeonGamerPS1">github.com/LeonGamerPS1/</link>
+    </links>
+	</contributor>
+
+	<contributor>
+		<name>EyeDaleHim</name>
+		<github>EyeDaleHim</github>
+		<description>Game dev, Haxe programmer and gamer. Worked on Friday Night Funkin' mods. Currently developing Undertale Purple.</description>
+		<role>TBD</role>
+		<links>
+			<link title="YouTube">https://www.youtube.com/@eyedalehim</link>
+			<link title="Twitter">https://x.com/eye_dalehim</link>
 		</links>
 	</contributor>
 </credits>
