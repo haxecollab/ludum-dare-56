@@ -68,4 +68,15 @@
 			<link title="Twitter">https://x.com/eye_dalehim</link>
 		</links>
 	</contributor>
+
+	<contributor>
+		<name>MKI</name>
+		<github>mikaib</github>
+		<description>Beginner graphics programmer and IT college student.</description>
+		<role>TBD</role>
+		<links>
+			<link title="Website/Portfolio (WIP at time of writing)">https://mki.sh</link>
+			<link title="Discord Profile">https://discord.com/users/792765286788628520</link>
+		</links>
+	</contributor>
 </credits>
