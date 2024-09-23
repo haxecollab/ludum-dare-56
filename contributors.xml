@@ -74,5 +74,27 @@
 		<github>Sword352</github>
 		<description>haiiiii :3</description>
 		<role>TBD</role>
+  </contributor>
+  
+  <contributor>
+		<name>MKI</name>
+		<github>mikaib</github>
+		<description>Beginner graphics programmer and IT college student.</description>
+		<role>TBD</role>
+		<links>
+			<link title="Website/Portfolio (WIP at time of writing)">https://mki.sh</link>
+			<link title="Discord Profile">https://discord.com/users/792765286788628520</link>
+		</links>
+	</contributor>
+
+	<contributor>
+		<name>Cobalt Bar</name>
+		<github>CobaltBar</github>
+		<description>Programmer, Streamer, and Gamer. I mess with FNF a lot.</description>
+		<role>TBD</role>
+		<links>
+			<link title="Website">https://cobaltbar.github.io</link>
+			<link title="Bluesky">https://bsky.app/profile/cobaltbar.bsky.social</link>
+		</links>
 	</contributor>
 </credits>
