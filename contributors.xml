@@ -25,4 +25,76 @@
 			<link title="Letterboxd">https://letterboxd.com/logo4poop</link>
 		</links>
 	</contributor>
+
+	<contributor>
+		<name>Jérémy Faivre</name>
+		<github>jeremyfa</github>
+		<description>Created Ceramic, makes games, apps, creative code and music</description>
+		<role>TBD (offered to make music, could participate in programming if inspired too)</role>
+		<links>
+			<link title="Mastodon">https://mastodon.gamedev.place/@jeremyfa</link>
+			<link title="Ceramic">https://ceramic-engine.com</link>
+			<link title="Soundcloud">https://soundcloud.com/jeremyfa</link>
+			<link title="X / Twitter">https://x.com/jeremyfaivre</link>
+			<link title="Instagram">https://instagram.com/jeremyfa</link>
+   </links>
+	</contributor>
+
+  <contributor>
+		<name>koteelok</name>
+		<github>koteelok</github>
+		<description>I don't know how to backflip.</description>
+		<role>TBD</role>
+  </contributor>
+  
+ 	<contributor>
+		<name>LeonGamerPS1</name>
+		<github>leongamerps1</github>
+		<description>HaxeFlixel and Roblox Studio Developer, maybe even a little bit of C#</description>
+		<role>Programmer</role>
+		<links>
+			<link title="Youtube: Untitled User (formerly known as benhzuuuuuuuuu)">https://www.youtube.com/@untitiled_user</link>
+			<link title="Github: LeonGamerPS1">github.com/LeonGamerPS1/</link>
+    </links>
+	</contributor>
+
+	<contributor>
+		<name>EyeDaleHim</name>
+		<github>EyeDaleHim</github>
+		<description>Game dev, Haxe programmer and gamer. Worked on Friday Night Funkin' mods. Currently developing Undertale Purple.</description>
+		<role>TBD</role>
+		<links>
+			<link title="YouTube">https://www.youtube.com/@eyedalehim</link>
+			<link title="Twitter">https://x.com/eye_dalehim</link>
+		</links>
+	</contributor>
+
+	<contributor>
+		<name>Sword</name>
+		<github>Sword352</github>
+		<description>haiiiii :3</description>
+		<role>TBD</role>
+  </contributor>
+  
+  <contributor>
+		<name>MKI</name>
+		<github>mikaib</github>
+		<description>Beginner graphics programmer and IT college student.</description>
+		<role>TBD</role>
+		<links>
+			<link title="Website/Portfolio (WIP at time of writing)">https://mki.sh</link>
+			<link title="Discord Profile">https://discord.com/users/792765286788628520</link>
+		</links>
+	</contributor>
+
+	<contributor>
+		<name>Cobalt Bar</name>
+		<github>CobaltBar</github>
+		<description>Programmer, Streamer, and Gamer. I mess with FNF a lot.</description>
+		<role>TBD</role>
+		<links>
+			<link title="Website">https://cobaltbar.github.io</link>
+			<link title="Bluesky">https://bsky.app/profile/cobaltbar.bsky.social</link>
+		</links>
+	</contributor>
 </credits>
