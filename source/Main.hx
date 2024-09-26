@@ -7,8 +7,12 @@ import haxe.ui.Toolkit;
 class Main extends Sprite {
 	public function new() {
 		super();
-
-		addChild(new FlxGame(0, 0, MainMenuState));
+		// HaxeUI Initalisation
 		Toolkit.init();
+		Toolkit.autoScale = false;
+		Toolkit.scale = 2;
+		// And Flixel...
+		addChild(new FlxGame(0, 0, MainMenuState));
+		flixel.FlxG.sound.volume = 0;
 	}
 }
