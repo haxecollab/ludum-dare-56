@@ -5,7 +5,7 @@ import haxe.ui.events.MouseEvent;
 @:xml('
 <vbox width="100%" height="100%">
 	<vbox id="mainbox" horizontalAlign="center" verticalAlign="center">
-		<label id="logo" horizontalAlign="center" text="HaxeCollab" />
+		<label id="logo" styleName="title" horizontalAlign="center" text="HaxeCollab" />
 		<vbox id="buttonbox" horizontalAlign="center">
 			<button id="play" text="play" />
 			<hbox>
@@ -17,6 +17,10 @@ import haxe.ui.events.MouseEvent;
 	<style>
 		label {
 			color: white;
+			font-name: "assets/fonts/LibreFranklin-Regular.ttf";
+		}
+
+		.title, #play label {
 			font-name: "assets/fonts/LibreFranklin-Black.ttf";
 		}
 
@@ -65,5 +69,10 @@ class HomePage extends haxe.ui.containers.VBox {
 	@:bind(github, MouseEvent.MOUSE_DOWN)
 	function onGithub(_) {
 		flixel.FlxG.openURL("https://github.com/haxecollab/ludum-dare-56");
+	}
+	
+	@:bind(play, MouseEvent.MOUSE_DOWN)
+	function onPlay(_) {
+		flixel.FlxG.switchState(PlayState.new);
 	}
 }

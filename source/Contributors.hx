@@ -2,6 +2,15 @@ package;
 
 using StringTools;
 
+typedef Contributor = {
+	name: String,
+	github: String,
+	description: String,
+	role: String,
+	hasLinks: Bool,
+	links: Array<{title: String, link: String}>
+};
+
 class Contributors {
 	public static macro function getContributors() {
 		#if macro
@@ -11,7 +20,7 @@ class Contributors {
 
 		for (c in access.nodes.contributor) {
 			// Generate markdown file
-			var contributor = {
+			var contributor: Contributor = {
 				name: (c.node.name.innerData: String).trim(),
 				github: (c.node.github.innerData: String).trim(),
 				description: (c.node.description.innerData: String).trim(),

@@ -20,4 +20,8 @@ class MainMenu extends haxe.ui.containers.VBox {
 	function onCredits(_) {
 		menuStack.selectedId = "credits";
 	}
+	@:bind(credits.back, MouseEvent.MOUSE_DOWN)
+	function onCreditsBack(_) {
+		menuStack.selectedId = "home";
+	}
 }
