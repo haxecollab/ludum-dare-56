@@ -14,7 +14,16 @@ import haxe.ui.events.MouseEvent;
 		<box width="100%" />
 	</hbox>
 	<hbox width="100%" height="100%">
-		<scrollview id="contributors" height="100%" width="50%" scrollMode="drag" contentWidth="100%" />
+		<listview id="contributors" height="100%" width="50%" scrollMode="drag" selectedIndex="0">
+			<item-renderer styleName="contributor" width="100%" layout="horizontal">
+            	<image id="avatar" width="32" height="32" />
+            	<vbox width="100%">
+                	<label id="github" styleName="title" width="100%" style="font-size: 8px;font-weight:bold;" />
+                	<label id="role" width="100%" />
+            	</vbox>
+        	</item-renderer>
+			<data />
+		</listview>
 		<vbox id="profile" width="50%" height="100%">
 			<scrollview contentWidth="100%" width="100%" height="100%">
 				<label style="font-size: 12px;" width="100%" styleName="title" id="name" text="Name" />
@@ -35,12 +44,25 @@ import haxe.ui.events.MouseEvent;
 			vertical-align: center;
 		}
 
-		#contributors, #profile {
+		#contributors, .contributor, #profile {
 			background-color: #1a1c2c;
 			background-opacity: 0.5;
+		}
+	
+		#contributors {
 			border: 1px solid #333c57;
 		}
 
+		.contributor:hover {
+			background-color: #1a1c2c;
+			background-opacity: 0.2;
+		}
+
+		.contributor:selected {
+			background-color: #1a1c2c;
+			background-opacity: 0.7;
+		}
+		
 		#profile {
 			padding: 6px;
 			border-radius: 1px;
@@ -56,47 +78,31 @@ import haxe.ui.events.MouseEvent;
 </vbox>
 ')
 class Credits extends haxe.ui.containers.VBox {
-	var current(default, set): ui.CreditsContributor;
-
 	override public function new() {
 		super();
 		final rand = new flixel.math.FlxRandom();
 		final contribs = Contributors.getContributors();
 		rand.shuffle(contribs);
 
-		var first = true;
 		for (c in contribs) {
-			var newContributor = new ui.CreditsContributor(c);
-			newContributor.percentWidth = 100;
-			newContributor.onClick = (_) -> {
-				current = newContributor;
-			};
-			contributors.addComponent(newContributor);
+			contributors.dataSource.add(c);
+		}
 
-			if (first) {
-				first = false;
-				current = newContributor;
+		contributors.onChange = (_) -> {
+			var newCurrent = contribs[contributors.selectedIndex];
+			name.text = newCurrent.name;
+			role.text = newCurrent.role;
+			description.text = newCurrent.description;
+			buttons.removeAllComponents();
+			for (l in newCurrent.links.slice(0, 3) ?? []) {
+				var button = new haxe.ui.components.Button();
+				button.text = l.title;
+				button.onClick = (_) -> {
+					flixel.FlxG.openURL(l.link);
+				};
+				button.percentWidth = 100;
+				buttons.addComponent(button);
 			}
-		}
-	}
-
-	function set_current(newCurrent) {
-		current?.removeClass(":active");
-		newCurrent.addClass(":active");
-		// Update profile fields
-		name.text = newCurrent.contributor.name;
-		role.text = newCurrent.contributor.role;
-		description.text = newCurrent.contributor.description;
-		buttons.removeAllComponents();
-		for (l in newCurrent.contributor.links.slice(0, 3) ?? []) {
-			var button = new haxe.ui.components.Button();
-			button.text = l.title;
-			button.onClick = (_) -> {
-				flixel.FlxG.openURL(l.link);
-			};
-			button.percentWidth = 100;
-			buttons.addComponent(button);
-		}
-		return current = newCurrent;
+		};
 	}
 }

@@ -8,7 +8,8 @@ typedef Contributor = {
 	description: String,
 	role: String,
 	hasLinks: Bool,
-	links: Array<{title: String, link: String}>
+	links: Array<{title: String, link: String}>,
+	avatar: String
 };
 
 class Contributors {
@@ -26,8 +27,10 @@ class Contributors {
 				description: (c.node.description.innerData: String).trim(),
 				role: (c.node.role.innerData: String).trim(),
 				hasLinks: false,
-				links: []
+				links: [],
+				avatar: null
 			};
+			contributor.avatar = 'assets/avatars/${contributor.github}.png';
 			if (c.hasNode.links) {
 				contributor.links = [for (l in c.node.links.nodes.link) {title: (l.att.title: String).trim(), link: (l.innerData: String).trim()}];
 				contributor.hasLinks = true;
