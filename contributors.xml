@@ -97,4 +97,15 @@
 			<link title="Bluesky">https://bsky.app/profile/cobaltbar.bsky.social</link>
 		</links>
 	</contributor>
+
+	<contributor>
+		<name>x8c8r</name>
+		<github>x8c8r</github>
+		<description>I write code and that's pretty much all I am good at</description>
+		<role>TBD</role>
+		<links>
+			<link title="Twitter">https://twitter.com/x8c8r</link>
+			<link title="GameBanana">https://gamebanana.com/members/1659364</link>
+		</links>
+	</contributor>
 </credits>
