@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@master
+        uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.3.6
       - name: Generate Credits
@@ -21,7 +21,8 @@ jobs:
         run: |
           haxe build.hxml
       - name: Cleanup
-        run: rm -rf haxe-*
+        run: |
+          rm -rf haxe-*
           rm -rf neko-*
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
