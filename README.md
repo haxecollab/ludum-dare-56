@@ -15,10 +15,7 @@ haxelib git haxeui-core https://github.com/haxeui/haxeui-core.git
 haxelib git haxeui-flixel https://github.com/haxeui/haxeui-flixel.git
 ```
 
-## Active Status
-Game Engine/Framework selection is **open**. Please visit this [discussion](https://github.com/haxecollab/ludum-dare-56/discussions/1) to make your opinion heard and nominate a selection.
+## HTML5 Deployment
+http://haxecollab.ld56.surge.sh/
 
-Genre constraints selection is **open**. Please visit this [discussion](https://github.com/haxecollab/ludum-dare-56/discussions/7) to make your opinion heard and nominate a selection.
 
-https://github.com/haxecollab/ludum-dare-56/discussions/7
-(Readme is a work-in-progress so please check back later!)
