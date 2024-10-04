@@ -26,8 +26,9 @@ jobs:
           haxelib install openfl --quiet
           haxelib install emitter --quiet
           haxelib install flixel --quiet
-          haxelib install haxeui-core --quiet
-          haxelib install haxeui-flixel --quiet
+          haxelib git haxeui-core https://github.com/haxeui/haxeui-core.git
+          haxelib git haxeui-flixel https://github.com/haxeui/haxeui-flixel.git
+
       - name: Build Windows (64-Bit)
         run: haxelib run lime build $GITHUB_WORKSPACE windows
       - uses: actions/upload-artifact@v3
@@ -52,8 +53,8 @@ jobs:
           haxelib install openfl --quiet
           haxelib install emitter --quiet
           haxelib install flixel --quiet
-          haxelib install haxeui-core --quiet
-          haxelib install haxeui-flixel --quiet
+          haxelib git haxeui-core https://github.com/haxeui/haxeui-core.git
+          haxelib git haxeui-flixel https://github.com/haxeui/haxeui-flixel.git
       - name: Build HTML5
         run: haxelib run lime build $GITHUB_WORKSPACE html5
       - uses: actions/upload-artifact@v3
