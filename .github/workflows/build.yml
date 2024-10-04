@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Windows (64-Bit) Build
-          path: D:/a/ludum-dare-56/ludum-dare-56/bin/windows/bin
+          path: D:/a/ludum-dare-56/ludum-dare-56/export/windows/bin
 
   build-html5:
     runs-on: windows-latest
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: HTML5 Build
-          path: D:/a/ludum-dare-56/ludum-dare-56/bin/html5/bin
+          path: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
 
   deploy-to-surge:
     runs-on: windows-latest
@@ -68,11 +68,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: HTML5 Build
-          path: D:/a/ludum-dare-56/ludum-dare-56/bin/html5/bin
+          path: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
       - name: Deploy to Surge
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: haxecollab.ludum-dare-56.surge.sh
-          project: D:/a/ludum-dare-56/ludum-dare-56/bin/html5/bin
+          project: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
