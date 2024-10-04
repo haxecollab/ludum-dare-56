@@ -72,7 +72,7 @@ jobs:
       - name: Deploy to Surge
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: haxecollab.ludum-dare-56.surge.sh
+          domain: haxecollab.ld56.surge.sh
           project: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
