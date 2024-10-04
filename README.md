@@ -9,10 +9,10 @@ If you are interested in joining the collab for this Jam, please read the visit 
 **You must submit a PR for your contributor file to be considered a member of the jam entry or cast votes!**
 
 # Building
-Install HaxeFlixel and OpenFL with the instructions on their website then install the following additional dependencies
-```
-haxelib git haxeui-core https://github.com/haxeui/haxeui-core.git
-haxelib git haxeui-flixel https://github.com/haxeui/haxeui-flixel.git
+
+```bash
+haxelib --global install hxpkg
+haxelib --global run hxpkg install
 ```
 
 ## HTML5 Deployment
