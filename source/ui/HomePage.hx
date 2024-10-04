@@ -68,11 +68,11 @@ import haxe.ui.events.MouseEvent;
 class HomePage extends haxe.ui.containers.VBox {
 	@:bind(github, MouseEvent.MOUSE_DOWN)
 	function onGithub(_) {
-		flixel.FlxG.openURL("https://github.com/haxecollab/ludum-dare-56");
+		FlxG.openURL("https://github.com/haxecollab/ludum-dare-56");
 	}
-	
+
 	@:bind(play, MouseEvent.MOUSE_DOWN)
 	function onPlay(_) {
-		flixel.FlxG.switchState(PlayState.new);
+		FlxG.switchState(() -> new PlayState());
 	}
 }
