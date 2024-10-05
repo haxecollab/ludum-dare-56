@@ -251,7 +251,7 @@
   - Perform platform-specific testing to ensure compatibility.
 
 ### Final Submission
-- **Assigned To**: **Project Lead (You)**
+- **Assigned To**: **Project Lead**
 - **Tasks**:
   - Make sure all assets and files are properly packaged and submitted on time for Ludum Dare.
 
