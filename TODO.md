@@ -1,1 +1,13 @@
-TBD!
+- Autotile
+- Level View
+- Proceedural Generator
+- Title Screen
+- Settings Screen(from title)
+- New Game Screen
+- Load Game Screen
+- Pathfinding
+- HUD
+- Gameplay/Mechanics
+- Graphics
+- Sound effects
+- BGM
