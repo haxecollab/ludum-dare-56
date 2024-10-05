@@ -1,259 +1,172 @@
-# Project Plan for "Tiny Realms: Micro Civilizations"
-1. Core Mechanics and Features
-
-    Autotile (FlxTileMap)
-        Set up autotiling to simplify map creation, ensuring seamless terrain transitions.
-    Level View (FlxTileMap)
-        Autotiling: Develop and implement a complete tile-based map with dynamic autotiling for terrain and environmental features.
-        Pathfinding: Integrate an efficient pathfinding system (A* or similar) for NPC movement across the map.
-        Map Size: Set up the overworld level with dimensions of 2048x2048 pixels.
-        Camera: Implement camera controls (zoom, pan) to allow players to navigate the large map smoothly.
-
-2. Procedural Generation
-
-    BSP (Binary Space Partitioning)
-        Use BSP for creating distinct, varied areas within the map (e.g., village zones, forest zones, resources).
-    Perlin Terrainmap Generator
-        Utilize Perlin noise for creating smooth, natural terrain features such as hills, valleys, and rivers.
-
-3. User Interface (UI)
-
-    Title Screen
-        Design a visually engaging title screen, with the game logo, theme music, and menu options.
-    Settings Screen
-        Include settings for adjusting sound, music volume, controls, screen resolution, and other gameplay preferences.
-    New Game Screen
-        Provide options to start a new game, select game difficulty, or customize initial civilization features.
-    Load Game Screen
-        Implement a screen for selecting saved games, allowing players to resume previous sessions.
-    HUD (Heads-Up Display)
-        Custom Metrics: Design a HUD to display civilization metrics, such as population, resources (food, wood, gold), happiness, and other important game indicators.
-
-4. Gameplay and Mechanics
-
-    AI (Artificial Intelligence)
-        Develop AI for villagers, warriors, and other units, allowing for autonomous behavior such as resource collection, combat, and decision-making.
-        Rival AI Civilizations: Implement basic AI for neighboring factions, capable of trading, forming alliances, and engaging in conflict.
-
-5. Graphics
-
-    Tilemap Graphics
-        Design and refine 16x16 tiles for various terrains (grass, dirt, water, rock) and structures (houses, walls, farms).
-    Creature Sprites
-        Create tiny 16x16 creature sprites, including villagers, warriors, wizards, and mythological beings.
-    Building and Structure Sprites
-        Design small structures such as houses, resource-gathering buildings, monuments, and defensive structures.
-    Animations
-        Add simple animations for resource gathering, construction, and combat to bring the world to life.
-
-6. Sound and Music
-
-    Sound Effects
-        Create sound effects for key actions like resource collection, construction, combat, and menu navigation. Sounds should have a nostalgic 16-bit feel.
-    Background Music (BGM)
-        Compose or source retro-style background music to enhance the atmosphere. Include different tracks for different scenarios (e.g., peaceful village music, battle theme).
-
-7. Game Logic and Systems
-
-    Resource System
-        Implement core resources (food, wood, stone, gold) and logic for resource generation, collection, and expenditure.
-    Building and Expansion System
-        Allow players to construct and upgrade structures. Ensure buildings contribute positively to metrics like population capacity and resource efficiency.
-    Tech Tree and Upgrades
-        Create a simple tech tree allowing players to research upgrades, leading to better buildings, stronger units, and new abilities.
-    Combat and Defense
-        Develop a simple combat system for defending the village from threats. Include basic attack and health values for units.
-
-8. Procedural Gameplay Elements
-
-    Random Events
-        Add random events to make gameplay dynamic (e.g., attacks by predators, visiting traders, changing weather).
-    Exploration
-        Include areas that are initially shrouded in fog-of-war, encouraging players to explore the 2048x2048 map.
-
-9. Game Flow and User Experience
-
-    Tutorial
-        Develop a brief, interactive tutorial to introduce players to the game mechanics—how to gather resources, build structures, and interact with AI civilizations.
-    Quests and Objectives
-        Implement quests and goals for players to achieve, helping guide progression and maintain engagement.
-    Narrative Integration
-        Tie gameplay elements into the story-driven narrative to enhance player immersion. Include dialogues with other factions, cutscenes, and storyline progression.
-
-10. Polish and Playtesting
-
-    Bug Fixing
-        Regularly playtest and fix bugs related to pathfinding, UI, and AI behaviors.
-    Balancing
-        Ensure balancing of resource generation, AI difficulty, and combat to make the gameplay challenging but fair.
-    Optimization
-        Optimize graphics and AI logic to maintain smooth performance, particularly in a large map environment.
-
-11. Deployment and Submission
-
-    Build and Export
-        Compile the game into executable formats for multiple platforms (e.g., Windows, Mac, web).
-    Testing on Target Platforms
-        Test the game on different platforms to ensure smooth functioning.
-    Final Submission
-        Ensure all required assets, build files, and documentation are ready for submission for the Ludum Dare deadline.
+# Project Plan for "Tiny Realms: Micro Civilizations" (Procedurally Generated Edition)
 
 ## 1. Core Mechanics and Level Design
-### Autotiling & Level Maps
-- **Assigned To**: **Level Designer 1**
+### Map Design
+- **Assigned Role**: **Level Designer**
 - **Tasks**:
-  - Set up the autotiling system using FlxTileMap for creating consistent terrain transitions.
-  - Design a base tile map (2048x2048) that includes all terrain types for the overworld.
+  - Design a large map (2048x2048) with sections that represent various environments for each tribe (e.g., forest for Leaf Tribe, rocky areas for Pebble Clan).
+  - Ensure the map is divided into multiple explorable areas, each with unique features.
 - **Dependencies**: Need basic tile graphics.
 
-### Pathfinding
-- **Assigned To**: **Gameplay Programmer**
+### Exploration and Interaction
+- **Assigned Role**: **Gameplay Programmer**
 - **Tasks**:
-  - Implement pathfinding for NPCs and player units (use A* algorithm).
-- **Dependencies**: Requires level maps to test unit movement.
+  - Implement a system for player exploration on the large map.
+  - Develop mechanisms to unlock areas progressively based on game progression.
 
 ### Camera System
-- **Assigned To**: **Gameplay Programmer**
+- **Assigned Role**: **Gameplay Programmer**
 - **Tasks**:
-  - Set up the camera system (zoom, pan) for navigating the large map smoothly.
-- **Dependencies**: Should be integrated with the level maps.
+  - Set up the camera system (zoom, pan) to efficiently navigate the large map.
 
 ## 2. Procedural Generation
-### BSP and Terrainmap Generator
-- **Assigned To**: **Procedural Content Programmer**
+### Procedurally Generated Elements
+- **Assigned Role**: **Procedural Content Programmer**
 - **Tasks**:
-  - Implement BSP to generate distinct map sections.
-  - Use Perlin noise for procedural terrain generation (hills, rivers).
-- **Dependencies**: Integrated into the tile maps to ensure variety in levels.
+  - Develop a procedural generation system for creating variations in each playthrough:
+    - **Tribe Locations**: Procedurally vary the locations of different tribes across the 2048x2048 map.
+    - **Puzzle Placement**: Randomize the placement of puzzles in different parts of the map.
+    - **Relic Fragment Locations**: Each playthrough should feature different relic fragment locations to keep the game experience fresh.
+    - **Dynamic NPC Traits**: Assign different personality traits and needs to tribes based on procedural generation to create variety in interactions.
 
-## 3. User Interface (UI)
-### Title Screen, Settings, New Game, Load Game
-- **Assigned To**: **UI Designer**
+### Random Events
+- **Assigned Role**: **Systems Programmer**
 - **Tasks**:
-  - Create visuals for title, settings, new game, and load screens.
-  - Coordinate with the **Programmer** to ensure UI screens transition correctly.
+  - Implement random events that add gameplay variety (e.g., sudden Gloom influence, dark creatures appearing).
+  - Procedurally vary the type and location of events for each playthrough.
+
+## 3. Puzzle Implementation
+### Environmental Puzzles (Procedurally Varying)
+- **Assigned Role**: **Puzzle Designer**
+- **Tasks**:
+  - Design simple puzzles (e.g., arranging items, guiding light sources, moving obstacles) that adapt in difficulty or configuration based on procedural placement.
+  - Ensure that puzzles fit within different areas of the map as generated.
+
+### Dialogue and Social Puzzles
+- **Assigned Role**: **Gameplay Writer**
+- **Tasks**:
+  - Create multiple-choice puzzles for social interactions that vary based on the tribe’s procedural characteristics.
+  - Write diverse dialogue options to keep encounters fresh and engaging.
+
+### Unity Puzzles
+- **Assigned Role**: **Puzzle Designer**
+- **Tasks**:
+  - Develop puzzles that symbolize unity between tribes, with elements procedurally randomized to ensure variability.
+  - Ensure these puzzles require a combination of contributions from different tribes to highlight the theme of cooperation.
+
+## 4. User Interface (UI)
+### Title Screen, Settings, and Menus
+- **Assigned Role**: **UI Designer**
+- **Tasks**:
+  - Create visuals for the title screen, settings, new game, and load screens.
+  - Coordinate with the **Gameplay Programmer** to ensure seamless UI transitions.
 
 ### HUD Development
-- **Assigned To**: **UI/UX Designer**
+- **Assigned Role**: **UI Designer**
 - **Tasks**:
-  - Design the HUD to show resources, population, and other game metrics.
-- **Dependencies**: Coordinate with **Gameplay Programmer** to integrate HUD metrics into gameplay.
+  - Design a HUD to show player progress, active quests, hints, and interactions.
 
-## 4. Gameplay Mechanics
-### AI Systems
-- **Assigned To**: **AI Programmer**
+## 5. Gameplay Mechanics
+### NPC Interactions and Dynamic Tribes
+- **Assigned Role**: **Gameplay Programmer**
 - **Tasks**:
-  - Implement AI for NPCs (villagers, workers) to make them perform tasks autonomously.
-  - Develop rival civilization AI with basic strategies for trading, alliances, and conflict.
-- **Dependencies**: Needs pathfinding to ensure smooth AI behavior.
+  - Implement a system for NPCs to have procedurally assigned personality traits.
+  - Ensure that different tribes have unique interactions or challenges based on their procedural characteristics.
 
-## 5. Graphics
+### Relic Collection and Activation
+- **Assigned Role**: **Systems Programmer**
+- **Tasks**:
+  - Develop a system for collecting relic fragments that are distributed procedurally across different tribe locations.
+  - Ensure each playthrough features different tasks or challenges for collecting these relic fragments.
+
+## 6. Graphics
 ### Tilemap Graphics
-- **Assigned To**: **Pixel Artist 1**
+- **Assigned Role**: **Pixel Artist 1**
 - **Tasks**:
-  - Create the 16x16 tiles for various terrains (grass, water, dirt).
-- **Dependencies**: Need to provide these to the **Level Designer**.
+  - Create 16x16 tiles for various terrains (e.g., forest, rocky areas, Gloom-affected zones).
+- **Dependencies**: Provided to the **Level Designer** and **Procedural Content Programmer**.
 
 ### Creature Sprites
-- **Assigned To**: **Pixel Artist 2**
+- **Assigned Role**: **Pixel Artist 2**
 - **Tasks**:
-  - Create tiny creature sprites (villagers, warriors, wizards, creatures).
-- **Dependencies**: Provided to the **Gameplay Programmer** for integration.
+  - Create sprites for different tribes' characters (e.g., Leaf Tribe members, Pebble Clan members).
+  - Design unique sprites for key characters like Elder Thistle and Ambassador Leaf.
 
-### Building Sprites and Animations
-- **Assigned To**: **Pixel Artist 3**
+### Puzzle Elements
+- **Assigned Role**: **Pixel Artist 3**
 - **Tasks**:
-  - Design and animate small structures like houses, farms, and defenses.
-- **Dependencies**: Coordinate with **Level Designer** for placement and size consistency.
+  - Design puzzle-related elements (e.g., movable stones, symbols, light sources).
 
-## 6. Sound and Music
+## 7. Sound and Music
 ### Sound Effects
-- **Assigned To**: **Sound Designer**
+- **Assigned Role**: **Sound Designer**
 - **Tasks**:
-  - Create retro-style sound effects for actions like resource collection, combat, and building.
-- **Dependencies**: Work with **Gameplay Programmer** for implementation timing.
+  - Create sound effects for interactions, solving puzzles, and environmental changes.
 
 ### Background Music (BGM)
-- **Assigned To**: **Composer**
+- **Assigned Role**: **Composer**
 - **Tasks**:
-  - Compose different background tracks (peaceful village music, battle theme).
-- **Dependencies**: Coordinate with **Sound Designer** for consistent audio feel.
+  - Compose different background tracks for each area (e.g., Leaf Tribe forest music, Pebble Clan theme).
+  - Include atmospheric tracks for Gloom-affected areas to enhance immersion.
 
-## 7. Game Logic and Systems
-### Resource Management
-- **Assigned To**: **Systems Programmer**
+## 8. Game Logic and Systems
+### Puzzle Integration
+- **Assigned Role**: **Gameplay Programmer**
 - **Tasks**:
-  - Implement logic for resource collection, inventory management, and building costs.
-- **Dependencies**: Integrate with **HUD** to display real-time metrics.
+  - Integrate the puzzles into the game, ensuring that their procedural placement fits into the map structure.
+  - Ensure puzzles trigger appropriate game progression events (e.g., unlocking new areas, receiving relic fragments).
 
-### Building and Expansion System
-- **Assigned To**: **Gameplay Programmer**
+### Progress Tracking
+- **Assigned Role**: **Systems Programmer**
 - **Tasks**:
-  - Develop the structure building mechanics, including resource requirements and progression.
-- **Dependencies**: Coordinate with **Systems Programmer** and **AI Programmer** for NPC involvement.
+  - Develop a system to track player progress, quest completions, and relic fragment collection.
+  - Ensure progress tracking adapts to procedural elements.
 
-### Tech Tree and Upgrades
-- **Assigned To**: **Systems Programmer**
-- **Tasks**:
-  - Create the technology upgrade paths and implement it into gameplay.
-- **Dependencies**: Work with the **UI Designer** to display the tech tree.
-
-## 8. Game Flow and User Experience
+## 9. Game Flow and User Experience
 ### Tutorial
-- **Assigned To**: **Gameplay Designer**
+- **Assigned Role**: **Gameplay Designer**
 - **Tasks**:
-  - Develop a step-by-step tutorial to introduce mechanics like resource collection, building, and trading.
-- **Dependencies**: Coordinate with **UI Designer** and **Gameplay Programmer** for implementation.
+  - Develop a brief, adaptive tutorial that introduces exploration, NPC interaction, and puzzle-solving, considering the procedural nature of the world.
 
 ### Quests and Objectives
-- **Assigned To**: **Gameplay Writer**
+- **Assigned Role**: **Gameplay Writer**
 - **Tasks**:
-  - Create engaging story-driven quests and objectives that progress the narrative.
-- **Dependencies**: Coordinate with **Systems Programmer** for quest triggers.
-
-## 9. Procedural Events and Exploration
-### Random Events
-- **Assigned To**: **Systems Programmer**
-- **Tasks**:
-  - Implement random events to make gameplay dynamic, such as surprise attacks or resource drops.
-- **Dependencies**: Coordinate with **AI Programmer** for handling NPC responses to these events.
-
-### Fog-of-War Exploration
-- **Assigned To**: **Gameplay Programmer**
-- **Tasks**:
-  - Create fog-of-war mechanics for unexplored areas to encourage exploration.
+  - Create engaging quests that guide players through puzzles, interactions, and uniting the tribes.
+  - Randomize certain quest elements to create different experiences in each playthrough.
 
 ## 10. Polish and Playtesting
 ### Playtesting
-- **Assigned To**: **Playtest Team** (any available team members)
+- **Assigned Role**: **Playtest Team** (any available team members)
 - **Tasks**:
-  - Test different parts of the game, identify bugs, and report issues to relevant programmers.
+  - Test the game with a focus on procedural variety, ensuring that different playthroughs are unique and bug-free.
+  - Report bugs and balancing issues to relevant team members.
 
 ### Bug Fixing
-- **Assigned To**: **All Programmers**
+- **Assigned Role**: **All Programmers**
 - **Tasks**:
-  - Address reported bugs and refine code for smooth performance.
+  - Address reported bugs and refine code for a smooth experience.
 
 ### Balancing and Optimization
-- **Assigned To**: **Systems Programmer**
+- **Assigned Role**: **Systems Programmer**
 - **Tasks**:
-  - Balance resource availability, AI difficulty, and combat for fair yet challenging gameplay.
+  - Ensure puzzles are challenging but fair and that procedural elements maintain playability.
+  - Optimize the game for consistent performance, even with procedural generation.
 
 ## 11. Deployment and Submission
 ### Build Compilation
-- **Assigned To**: **Lead Programmer**
+- **Assigned Role**: **Lead Programmer**
 - **Tasks**:
   - Compile the game into executable formats (e.g., Windows, Mac, web).
 
 ### Testing and Debugging
-- **Assigned To**: **Testing Team**
+- **Assigned Role**: **Testing Team**
 - **Tasks**:
   - Perform platform-specific testing to ensure compatibility.
 
 ### Final Submission
-- **Assigned To**: **Project Lead**
+- **Assigned Role**: **Project Lead**
 - **Tasks**:
-  - Make sure all assets and files are properly packaged and submitted on time for Ludum Dare.
+  - Ensure all assets and files are properly packaged and submitted on time for Ludum Dare.
 
 ## Collaboration Tools
 - **Version Control**: Use a version control system like **Git** to ensure everyone’s work integrates smoothly.
