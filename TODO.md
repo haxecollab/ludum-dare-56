@@ -259,3 +259,60 @@
 - **Version Control**: Use a version control system like **Git** to ensure everyone’s work integrates smoothly.
 - **Communication**: Keep everyone connected through **Discord** to streamline coordination.
 
+
+# Narrative
+
+## Background Story:
+
+The Tiny Realms were once a beautiful, thriving miniature world, filled with different creatures and peaceful communities. But an ancient force, known as the "Gloom," began spreading, turning the vibrant gardens into dark wastelands. The different tribes of Tiny Realms went into isolation, afraid of the Gloom and losing their connection to one another.
+
+You, the newly chosen leader of a small tribe, have been tasked with uniting the scattered tiny tribes and defeating the Gloom. Your journey will involve gaining the trust of neighboring tribes, solving puzzles, and finding a way to restore harmony.
+Narrative Arc:
+
+The story unfolds in a series of phases, focused on passive exploration, solving puzzles, and fostering unity without complex resource management.
+
+    The Awakening (Starting Phase)
+        Goal: Lead your small tribe through initial explorations and make first contact with other tribes.
+        Story Element: Elder Thistle tells you about the Gloom and how it has weakened the world. He encourages you to explore and make contact with other tribes. In this phase, players explore small sections of the map, discovering clues and hints about the neighboring tribes.
+
+    Meeting the Neighbors (Exploration and Diplomacy)
+        Goal: Passively interact with neighboring tiny tribes by exploring and helping them solve problems.
+        Story Element: Each neighboring tribe has its own fears and concerns. For instance, the Leaf Tribe is dealing with pest infestations, while the Pebble Clan fears the Gloom more than anything. Players solve simple puzzles to help these tribes, like rearranging leaves to clear paths or using light to scare off pests. This phase is focused on passive interaction rather than active resource building.
+
+    The Gloom's Challenges (Puzzle Encounters)
+        Goal: As you start uniting tribes, the Gloom sends challenges your way. Players must solve environmental puzzles to keep progressing.
+        Story Element: The Gloom, aware of your progress, creates obstacles—dark creatures blocking paths or areas turned into toxic wastelands. Players can overcome these obstacles by solving puzzles. For example, they might need to guide fireflies to light up a dark area or rearrange rocks to create a safe path.
+
+    The Relic Quest (Relic Gathering Phase)
+        Goal: Find the relic fragments by solving puzzles and earning the trust of different tribes.
+        Story Element: Each tribe has a piece of an ancient relic that can help push back the Gloom. Players need to complete unique puzzles for each tribe to earn their fragment. These could be social puzzles where players must choose the correct dialogue options, or simple environmental puzzles to help fix something in the tribe's area (like helping the Pebble Clan build a bridge by solving a balancing puzzle).
+
+    Unification (Passive Progress Phase)
+        Goal: Unify the tribes to activate the relic.
+        Story Element: After collecting all the relic fragments, players must unite the tribes. This involves resolving simple conflicts through puzzle-solving. For example, players might need to place symbols representing each tribe in the correct order to show their unity or help mediate disputes by choosing peaceful solutions in dialogue. No complex building or resource gathering—just completing simple, engaging tasks.
+
+    The Final Confrontation (Endgame Puzzle)
+        Goal: Use the relic to dispel the Gloom by solving a final series of puzzles.
+        Story Element: With the relic reassembled, the final challenge is to solve a multi-stage puzzle that symbolizes the unity of all tribes. Players must match elements from each tribe to bring balance and dispel the Gloom, highlighting the importance of each tribe's unique contributions.
+
+    A New Dawn (Epilogue)
+        Goal: Decide how to guide the future of the unified Tiny Realms.
+        Story Element: Players are presented with a choice on how to move forward—keeping the tribes semi-independent or uniting them as one federation. The ending varies based on these choices, which players made during their interactions with the tribes.
+
+Character-Driven Storytelling:
+
+    Elder Thistle: The wise elder who introduces you to the history of the Tiny Realms and guides you through each phase, giving advice and hints about solving the puzzles.
+    Ambassador Leaf: A cautious but optimistic representative of the Leaf Tribe who serves as a liaison and helps facilitate interactions with other tribes.
+    The Gloombringer: The shadowy figure behind the Gloom. Rather than direct combat, players face them through a final series of puzzles that represent overcoming fear and division.
+
+Narrative Choices and Puzzle Integration:
+
+    Environmental Puzzles: Simple puzzles scattered throughout the game, such as arranging items, guiding light sources, or connecting pathways to progress through blocked areas.
+    Dialogue Puzzles: When interacting with different tribes, players may face dialogue-based challenges where they must choose the right responses to gain trust or diffuse conflicts.
+    Unity Puzzles: As players progress, they must solve puzzles that symbolize unity, such as aligning symbols of each tribe or completing tasks that require combining elements from different tribes.
+
+Themes:
+
+    Unity vs. Division: The core theme is the importance of unity. Bringing together the isolated tribes is key to defeating the Gloom.
+    Small Acts, Big Change: Small actions—helping neighbors, solving puzzles—lead to significant outcomes, demonstrating how cooperation can bring about change.
+v
