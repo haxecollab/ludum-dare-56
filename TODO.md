@@ -1,5 +1,5 @@
 - Autotile
-- Level View
+- Level View(Tilemap)
 - Proceedural Generator
 - Title Screen
 - Settings Screen(from title)
@@ -11,3 +11,5 @@
 - Graphics
 - Sound effects
 - BGM
+
+If you're interested in one of these tasks, please ask!
