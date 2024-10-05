@@ -257,6 +257,5 @@
 
 ## Collaboration Tools
 - **Version Control**: Use a version control system like **Git** to ensure everyone’s work integrates smoothly.
-- **Task Assignment**: Use a project management tool like **Trello** or **Notion** to keep track of everyone’s tasks and progress.
-- **Communication**: Keep everyone connected through **Discord** channels dedicated to specific tasks (art, code, sound, etc.) to streamline coordination.
+- **Communication**: Keep everyone connected through **Discord** to streamline coordination.
 
