@@ -14,7 +14,7 @@
 			<link title="OpenFL">https://www.openfl.org/</link>
 		</links>
 	</contributor>
-	
+
 	<contributor>
 		<name>logo</name>
 		<github>l0go</github>
@@ -37,17 +37,17 @@
 			<link title="Soundcloud">https://soundcloud.com/jeremyfa</link>
 			<link title="X / Twitter">https://x.com/jeremyfaivre</link>
 			<link title="Instagram">https://instagram.com/jeremyfa</link>
-   </links>
+		</links>
 	</contributor>
 
-  <contributor>
+	<contributor>
 		<name>koteelok</name>
 		<github>koteelok</github>
 		<description>I don't know how to backflip.</description>
 		<role>TBD</role>
-  </contributor>
-  
- 	<contributor>
+	</contributor>
+
+	<contributor>
 		<name>LeonGamerPS1</name>
 		<github>leongamerps1</github>
 		<description>HaxeFlixel and Roblox Studio Developer, maybe even a little bit of C#</description>
@@ -55,7 +55,7 @@
 		<links>
 			<link title="Youtube: Untitled User (formerly known as benhzuuuuuuuuu)">https://www.youtube.com/@untitiled_user</link>
 			<link title="Github: LeonGamerPS1">github.com/LeonGamerPS1/</link>
-    </links>
+		</links>
 	</contributor>
 
 	<contributor>
@@ -74,9 +74,9 @@
 		<github>Sword352</github>
 		<description>haiiiii :3</description>
 		<role>TBD</role>
-  </contributor>
-  
-  <contributor>
+	</contributor>
+
+	<contributor>
 		<name>MKI</name>
 		<github>mikaib</github>
 		<description>Beginner graphics programmer and IT college student.</description>
@@ -108,4 +108,19 @@
 			<link title="GameBanana">https://gamebanana.com/members/1659364</link>
 		</links>
 	</contributor>
+
+	<contributor>
+		<name>Alory (Tii)</name>
+		<github>SIG7Pro</github>
+		<description>I typed everything for my entry by hand except for the GameBanana link and I'm typing this description fourth to last with the Pixilart one being last.</description>
+		<role>TBD (Hoping for any art role.)</role>
+		<links>
+			<link title="Pixilart (Main Social)">www.pixilart.com/SIG7</link>
+			<link title="Overall URLs">www.resite.link/SIG7</link>
+			<link title="GameBanana">https://gamebanana.com/members/3596692</link>
+			<link title="GitHub">www.github.com/SIG7Pro</link>
+			<link title="RIU GitHub (Give me code!)">www.github.com/SIG7Pro/RapItUp</link>
+			<link title="Bluesky">www.bsky.app/profile/elastedalorian.bsky.social</link>
+		</links>
+	</contributor> 
 </credits>
