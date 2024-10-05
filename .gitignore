@@ -1,0 +1,15 @@
+*.diff
+*.hxproj
+.unittest
+flixel.zip
+export/*
+.vscode/*
+.haxelib/
+*.code-workspace
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+.ionide
+dump

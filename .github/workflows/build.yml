@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.4
+      - run: haxe -version
+      - name: Install External Dependencies
+        run: |
+          haxelib install hxpkg
+          haxelib run hxpkg install
+          haxelib install format --quiet
+          haxelib install emitter --quiet
+
+      - name: Build Windows (64-Bit)
+        run: haxelib run lime build $GITHUB_WORKSPACE windows
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Windows (64-Bit) Build
+          path: D:/a/ludum-dare-56/ludum-dare-56/export/windows/bin
+
+  build-html5:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.4
+      - run: haxe -version
+      - name: Install External Dependencies
+        run: |
+          haxelib install hxpkg
+          haxelib run hxpkg install
+          haxelib install format --quiet
+          haxelib install emitter --quiet
+      - name: Build HTML5
+        run: haxelib run lime build $GITHUB_WORKSPACE html5
+      - uses: actions/upload-artifact@v3
+        with:
+          name: HTML5 Build
+          path: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
+
+  deploy-to-surge:
+    runs-on: windows-latest
+    needs: build-html5
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: HTML5 Build
+          path: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
+      - name: Deploy to Surge
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: haxecollab.ld56.surge.sh
+          project: D:/a/ludum-dare-56/ludum-dare-56/export/html5/bin
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}

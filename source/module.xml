@@ -1,0 +1,5 @@
+<module id="haxeui-core" priority="-2">
+	<components>
+		<class package="ui" />
+	</components>
+</module>
