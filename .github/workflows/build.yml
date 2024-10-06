@@ -24,6 +24,7 @@ jobs:
           haxelib run hxpkg install
           haxelib install format --quiet
           haxelib install emitter --quiet
+          haxelib install feathersui --quiet
 
       - name: Build Windows (64-Bit)
         run: haxelib run lime build $GITHUB_WORKSPACE windows
@@ -48,6 +49,7 @@ jobs:
           haxelib run hxpkg install
           haxelib install format --quiet
           haxelib install emitter --quiet
+          haxelib install feathersui --quiet
       - name: Build HTML5
         run: haxelib run lime build $GITHUB_WORKSPACE html5
       - uses: actions/upload-artifact@v3
