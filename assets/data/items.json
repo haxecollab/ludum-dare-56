@@ -1,0 +1,194 @@
+{
+    "items": [
+        {
+            "id": "fire_relic",
+            "name": "Fire Relic",
+            "description": "A relic that contains the power of fire, used to thaw ice, scare off creatures, or provide warmth. Requires careful use to maintain trust with certain clans."
+        },
+        {
+            "id": "leaf_amulet",
+            "name": "Leaf Amulet",
+            "description": "An amulet carved from sacred leaves, allowing a deeper understanding of nature. Useful for interacting with animals or negotiating with the Leaf Clan."
+        },
+        {
+            "id": "stone_pickaxe",
+            "name": "Stone Pickaxe",
+            "description": "A sturdy tool used for breaking through rocky paths or unearthing artifacts. Might require repairs after heavy use, often by the Pebble Clan."
+        },
+        {
+            "id": "water_flask_(gloom_purified)",
+            "name": "Water Flask (Gloom Purified)",
+            "description": "Contains purified water resistant to the Gloom's corruption. Used for healing blighted areas or purifying corrupted regions, but requires Water Clan resources."
+        },
+        {
+            "id": "turtle_shell_charm",
+            "name": "Turtle Shell Charm",
+            "description": "A protective charm carved from a turtle shell. Provides additional protection to NPCs during dangerous missions, though it risks being lost after use."
+        },
+        {
+            "id": "ice_crystal",
+            "name": "Ice Crystal",
+            "description": "A shard of pure ice that can be used to cool heated arguments or solve puzzles related to heat. Highly valued by the Ice Clan."
+        },
+        {
+            "id": "pebble_of_strength",
+            "name": "Pebble of Strength",
+            "description": "A symbolic pebble that provides a sense of unity and strength to those who carry it. Often used in negotiations with the Pebble Clan to establish common ground."
+        },
+        {
+            "id": "sacred_leaf_bundle",
+            "name": "Sacred Leaf Bundle",
+            "description": "A bundle of sacred leaves that can be used to treat injuries or protect crops. Highly respected by the Leaf Clan and useful for forging alliances."
+        },
+        {
+            "id": "ember_stone",
+            "name": "Ember Stone",
+            "description": "A small stone that glows with a faint warmth. Useful in interactions with the Fire Clan and can also provide comfort during harsh winters."
+        },
+        {
+            "id": "frozen_dewdrop",
+            "name": "Frozen Dewdrop",
+            "description": "A rare dewdrop frozen in time. Can be used to impress the Ice Clan or as an offering during specific rituals."
+        },
+        {
+            "id": "gloom-resistant_pesticide",
+            "name": "Gloom-Resistant Pesticide",
+            "description": "A mixture that wards off pests and helps protect crops from Gloom contamination. Useful in dealing with the Leaf Clan\u2019s pest issues."
+        },
+        {
+            "id": "aurora_shard",
+            "name": "Aurora Shard",
+            "description": "A shard that glows with the colors of the aurora. Can be used to light up dark areas or as a sign of goodwill to the Ice Clan."
+        },
+        {
+            "id": "gloom_sample",
+            "name": "Gloom Sample",
+            "description": "A contained sample of the Gloom, useful for studying its properties or negotiating with those who wish to understand it better."
+        },
+        {
+            "id": "river_stone",
+            "name": "River Stone",
+            "description": "A smooth stone found in the river, representing adaptability and flow. Useful in negotiations with the Water Clan."
+        },
+        {
+            "id": "flame_berry",
+            "name": "Flame Berry",
+            "description": "A rare berry that burns with an inner fire. It can be used to ignite certain rituals or as a token of respect to the Fire Clan."
+        },
+        {
+            "id": "seaweed_wrap",
+            "name": "Seaweed Wrap",
+            "description": "A bundle of seaweed that has healing properties. Often used by the Water Clan to help recover from injuries or as an offering to gain their favor."
+        },
+        {
+            "id": "mystic_feather",
+            "name": "Mystic Feather",
+            "description": "A feather from a rare bird that can calm emotions. Useful during negotiations or when calming tensions between clans."
+        },
+        {
+            "id": "frozen_heart_talisman",
+            "name": "Frozen Heart Talisman",
+            "description": "A talisman that symbolizes emotional control and resilience. Valued by the Ice Clan and useful during cold crises."
+        },
+        {
+            "id": "flask_of_ember_water",
+            "name": "Flask of Ember Water",
+            "description": "Water infused with the essence of fire, useful for thawing frozen areas without offending the Ice Clan as much as the Fire Relic would."
+        },
+        {
+            "id": "gloom_ward",
+            "name": "Gloom Ward",
+            "description": "An enchanted object that provides temporary protection against Gloom corruption. Often used when exploring Gloom-infested areas."
+        },
+        {
+            "id": "whispering_reed",
+            "name": "Whispering Reed",
+            "description": "A reed that makes a soft sound in the wind. Used to communicate across distances or send peaceful signals to other clans."
+        },
+        {
+            "id": "glow_moss",
+            "name": "Glow Moss",
+            "description": "A type of moss that glows faintly in the dark, used to navigate through dark areas or as a light source in negotiations."
+        },
+        {
+            "id": "river_lily",
+            "name": "River Lily",
+            "description": "A flower that grows only in the purest waters. Represents peace and purity, often used in ceremonies or as an offering to gain trust."
+        },
+        {
+            "id": "obsidian_mirror",
+            "name": "Obsidian Mirror",
+            "description": "A polished piece of obsidian that reflects truth. Used in diplomacy to prove honesty or expose deception."
+        },
+        {
+            "id": "snowflake_charm",
+            "name": "Snowflake Charm",
+            "description": "A charm that represents the uniqueness of each individual. Useful in negotiations with the Ice Clan to demonstrate respect for individuality."
+        },
+        {
+            "id": "sun_stone",
+            "name": "Sun Stone",
+            "description": "A stone that captures sunlight, used to brighten dark places or as a symbol of hope during difficult times."
+        },
+        {
+            "id": "ashen_bark",
+            "name": "Ashen Bark",
+            "description": "Bark from a tree that survived a fire, representing resilience. Used in dealings with the Fire Clan or as a reminder of recovery."
+        },
+        {
+            "id": "purity_pearl",
+            "name": "Purity Pearl",
+            "description": "A pearl symbolizing purity and clarity, often used in rituals to cleanse areas tainted by the Gloom."
+        },
+        {
+            "id": "wind_chime_of_unity",
+            "name": "Wind Chime of Unity",
+            "description": "A chime that makes a calming sound in the wind, promoting peace during clan meetings and important gatherings."
+        },
+        {
+            "id": "crystalized_fog",
+            "name": "Crystalized Fog",
+            "description": "A mysterious crystal formed from condensed fog. Useful in solving puzzles that involve illusions or misleading paths."
+        },
+        {
+            "id": "frozen_fern",
+            "name": "Frozen Fern",
+            "description": "A delicate fern encased in ice, representing balance between life and cold. Valued by the Ice Clan as a token of peace."
+        },
+        {
+            "id": "tide_stone",
+            "name": "Tide Stone",
+            "description": "A stone enchanted by the rhythm of the tides, used to invoke the Water Clan\u2019s favor or regulate water flow."
+        },
+        {
+            "id": "charcoal_etching_kit",
+            "name": "Charcoal Etching Kit",
+            "description": "Used to record symbols and relic findings, helpful for documenting progress in pushing back the Gloom or unlocking relic puzzles."
+        },
+        {
+            "id": "leaf_relic",
+            "name": "Leaf Relic",
+            "description": "An ancient relic symbolizing growth and harmony with nature. It is highly valued by the Leaf Clan and can be used to strengthen bonds or heal parts of the land."
+        },
+        {
+            "id": "pebble_relic",
+            "name": "Pebble Relic",
+            "description": "A relic that represents resilience and unity. The Pebble Clan sees it as a symbol of their heritage, and it can be used to foster alliances or bolster the spirit of the people."
+        },
+        {
+            "id": "water_relic",
+            "name": "Water Relic",
+            "description": "A sacred relic that holds the power of water, symbolizing purification and adaptability. It can be used to clear Gloom-tainted areas or purify water sources."
+        },
+        {
+            "id": "turtle_relic",
+            "name": "Turtle Relic",
+            "description": "A relic carved in the shape of a turtle, representing stability and protection. It can be used to protect the village or to gain the favor of the Turtle Clan."
+        },
+        {
+            "id": "ice_relic",
+            "name": "Ice Relic",
+            "description": "A relic of the Ice Clan, symbolizing endurance and control over the cold. It can be used to quell disputes, cool dangerous situations, or fortify the frozen regions."
+        }
+    ]
+}

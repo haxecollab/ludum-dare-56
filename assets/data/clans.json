@@ -1,0 +1,24 @@
+{
+	"clans":[
+		{
+			"id":"leaf_clan",
+			"name":"Leaf Clan"
+		},		
+		{
+			"id":"fire_clan",
+			"name":"Fire Clan"
+		},		
+		{
+			"id":"ice_clan",
+			"name":"Ice Clan"
+		},		
+		{
+			"id":"turtle_clan",
+			"name":"Turtle Clan"
+		},		
+		{
+			"id":"pebble_clan",
+			"name":"Pebble Clan"
+		}						
+	]
+}

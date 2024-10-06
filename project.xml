@@ -33,6 +33,8 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="haxeui-core" />
 	<haxelib name="haxeui-flixel" />
+	<!-- Temp libraries-->
+	<haxelib name="feathersui" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
