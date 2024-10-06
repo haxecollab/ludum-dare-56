@@ -5,11 +5,11 @@ import haxe.ui.events.MouseEvent;
 @:xml('
 <vbox width="100%" height="100%">
 	<vbox id="mainbox" horizontalAlign="center" verticalAlign="center">
-		<label id="logo" styleName="title" horizontalAlign="center" text="HaxeCollab" />
+		<label id="logo" styleName="title" horizontalAlign="center" text="Tiny Realms" />
 		<vbox id="buttonbox" horizontalAlign="center">
-			<button id="play" text="play" />
-			<hbox>
-				<button id="credits" text="credits" />
+			<button id="play" text="Play" />
+			<hbox horizontalAlign="center">
+				<button id="credits" text="Credits" />
 				<button id="github" height="100%" icon="assets/images/github-mark.png" />
 			</hbox>
 		</vbox>
@@ -17,11 +17,8 @@ import haxe.ui.events.MouseEvent;
 	<style>
 		label {
 			color: white;
-			font-name: "assets/fonts/LibreFranklin-Regular.ttf";
-		}
-
-		.title, #play label {
-			font-name: "assets/fonts/LibreFranklin-Black.ttf";
+			font-name: "assets/fonts/PixelOperator-Bold.ttf";
+			font-size: 12px;
 		}
 
 		#mainbox {
@@ -31,7 +28,7 @@ import haxe.ui.events.MouseEvent;
 		}
 
 		#logo {
-			font-size: 36px;
+			font-size: 42px;
 			filter: drop-shadow(1, 45, #000000, 0.05, 6, 1, 30, 35, false);
 		}
 
@@ -41,11 +38,11 @@ import haxe.ui.events.MouseEvent;
 
 		#play {
 			width: 100%;
-			height: 32px;
+			height: 28px;
 			color: #f4f4f4;
 			border: $normal-border-size solid #27070d;
 			background: #d24b64 #b13e53 vertical;
-			font-size: 14px;
+			font-size: 16px;
 		}
 
 		#play:hover {

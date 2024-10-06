@@ -12,7 +12,6 @@ class InitState extends FlxState {
 		Toolkit.init();
 		Toolkit.autoScale = false;
 		Toolkit.scale = 2;
-		FlxSprite.defaultAntialiasing = true;
 
 		FlxTransitionableState.defaultTransIn = new TransitionData(FADE, FlxColor.BLACK, .25, new FlxPoint(-1));
 		FlxTransitionableState.defaultTransOut = new TransitionData(FADE, FlxColor.BLACK, .25, new FlxPoint(1));
