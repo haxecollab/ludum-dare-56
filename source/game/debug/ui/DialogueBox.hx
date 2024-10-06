@@ -48,16 +48,15 @@ class DialogueBox extends LayoutGroup {
 
 	private function setup():Void {
 		var vLayout:VerticalLayout = new VerticalLayout();
-		vLayout.gap = 1;
 		this.layout = vLayout;
 
 		this._header = new Header("Dialogue");
 		this.addChild(_header);
 
 		this._textArea = new TextArea();
+        this._textArea.wordWrap = false;
 		this._textArea.height = 128;
 		this._textArea.editable = false;
-		this.addEventListener(Event.RESIZE, _onResize);
 		this.addChild(_textArea);
 
         _toggleGroup = new ToggleGroup();
@@ -72,10 +71,13 @@ class DialogueBox extends LayoutGroup {
 		this.addChild(_responseView);
 	}
 
-	private function _onResize(e:Event):Void {
-		var w:Float = this.width - 212;
-		this._textArea.width = w;
-		this._header.width = w;
-		this._responseView.width = w;
-	}
+        override function set_width(value:Float):Float {
+            		this._textArea.width = value;
+		this._header.width = value;
+		this._responseView.width = value;
+
+               return this.width;
+        }
+
+	
 }
