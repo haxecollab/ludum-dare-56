@@ -3,6 +3,11 @@ import openfl.utils.Object;
 import haxe.ds.StringMap;
 
 class StateManager {
+	public static inline var SAVED:String = "saved";
+	public static inline var LOADED:String = "loaded";
+	public static inline var INIT:String = "init";
+	public static inline var RESET:String = "reset";
+
 	public static var current(get, never):StateManager;
 	private static var _current:StateManager;
 
