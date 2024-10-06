@@ -27,7 +27,7 @@ class StateManager {
 	private var numberMap:StringMap<Int>;
 	private var objectMap:StringMap<Object>;
 	private var arrayMap:StringMap<Array<Any>>;
-	private var switchMap:StringMap<Bool>;
+	private var switchMap:StringMap<Null<Bool>>;
 
 	// Constructor - private to enforce singleton pattern
 	private function new() {
