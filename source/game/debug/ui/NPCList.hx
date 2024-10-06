@@ -1,5 +1,7 @@
 package game.debug.ui;
 
+import game.object.Game;
+import game.state.StateManager;
 import game.asset.ImageData;
 import openfl.display.Bitmap;
 import feathers.controls.Button;
@@ -34,19 +36,28 @@ class NPCList extends LayoutGroup {
 
 	public function setData(data:Array<NPC>) {
 		this._listView.dataProvider = new ArrayCollection(data);
+        validateHeaderData();
 	}
+
+    public function validateHeaderData():Void{
+        var clanData:Dynamic = AssetManager.getData(CLANS);
+		var object:Dynamic = DataUtil.getObjectByID(this._id, clanData.clans);
+
+        var name:String = Std.string(object.name + " NPC");
+        if(this._listView.dataProvider != null){
+           name += "(" + Std.string(_listView.dataProvider.length) + ")";
+        }
+        this._header.text = name;
+    }
 
 	private function setup():Void {
 		var vLayout:VerticalLayout = new VerticalLayout();
 		this.layout = vLayout;
 
-		var clanData:Dynamic = AssetManager.getData(CLANS);
-		var object:Dynamic = DataUtil.getObjectByID(this._id, clanData.clans);
-
-		var name:String = Std.string(object.name + " NPCs");
-		this._header = new Header(name);
+		this._header = new Header();
 		this._header.width = (Lib.current.stage.stageWidth / 6) - 2;
 		addChild(this._header);
+       // validateHeaderData();
 
 		this._listView = new ListView();
 		this._listView.itemRendererRecycler = DisplayObjectRecycler.withFunction(_renderNPC);

@@ -52,14 +52,21 @@ class DebugHUD extends LayoutGroup {
 	}
 
     private function _onPopulationChange(e:GameEvent):Void{
-        switch((e.data:Clan)){
+      var npcList:NPCList =  switch((e.data:Clan)){
             case FIRE:
+                this.fireNPCList;
             case ICE:
+                this.iceNPCList;
             case LEAF:
+                this.leafNPCList;
             case WATER:
+                this.waterNPCList;
             case TURTLE:
+                this.turtleNPCList;
             case PEBBLE:
+                this.pebbleNPCList;
         }
+        npcList.validateHeaderData();
     }
 
     private function _setupDataSync():Void{
