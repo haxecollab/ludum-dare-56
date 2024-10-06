@@ -1,32 +1,25 @@
 package game.debug.ui;
 
-import util.DataUtil;
-import game.asset.AssetManager;
 import feathers.controls.Header;
 import feathers.layout.VerticalLayout;
 import feathers.controls.LayoutGroup;
-import openfl.Lib;
 import feathers.controls.Label;
 import feathers.layout.HorizontalLayout;
 import feathers.controls.dataRenderers.LayoutGroupItemRenderer;
-import feathers.utils.DisplayObjectRecycler;
 import feathers.data.ArrayCollection;
-import game.object.NPC;
 import feathers.controls.ListView;
 
-class NPCList extends LayoutGroup{
+//Probably just create a base class headerlist since we have duplicate features here
+class StatusList extends LayoutGroup{
     private var _listView:ListView;
     private var _header:Header;
-    private var _id:String;
 
-    public function new(id:String){
+    public function new(){
         super();       
-
-        this._id = id;
         setup();
     }
 
-    public function setData(data:Array<NPC>){
+    public function setData(data:Array<String>){
         this._listView.dataProvider = new ArrayCollection(data);
     }
 
@@ -34,19 +27,18 @@ class NPCList extends LayoutGroup{
         var vLayout:VerticalLayout = new VerticalLayout();
         this.layout = vLayout;
 
-        var name:String = Std.string(DataUtil.getObjectByID(this._id, AssetManager.getData(CLANS).clans).name + " NPCs");
-        this._header = new Header(name);
-        this._header.width = (Lib.current.stage.stageWidth / 6) - 2;
-        addChild(this._header);
+        this._header = new Header("Status");
+        this._header.width = 212;
+        this.addChild(this._header);
 
         this._listView = new ListView();
-        this._listView.itemRendererRecycler = DisplayObjectRecycler.withFunction(_renderNPC);
+       // this._listView.itemRendererRecycler = DisplayObjectRecycler.withFunction(_renderItem);
         this._listView.width = this._header.width;
         this._listView.height = 212;
         addChild(this._listView);
     }
 
-    private function _renderNPC():LayoutGroupItemRenderer{
+    private function _renderITem():LayoutGroupItemRenderer{
         var itemRenderer = new LayoutGroupItemRenderer();
 
         var layout = new HorizontalLayout(); 
