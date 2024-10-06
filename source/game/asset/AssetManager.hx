@@ -24,7 +24,7 @@ class AssetManager {
 		}
 	}
 
-	public function getData(data:GameData):Object {
+	public static  function getData(data:GameData):Object {
 		return _dataMap.get(data);
 	}
 }

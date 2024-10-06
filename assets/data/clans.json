@@ -19,6 +19,10 @@
 		{
 			"id":"pebble_clan",
 			"name":"Pebble Clan"
+		},
+        {
+			"id":"water_clan",
+			"name":"Water Clan"
 		}						
 	]
 }
