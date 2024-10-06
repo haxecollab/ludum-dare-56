@@ -1,5 +1,7 @@
 package game.debug.ui;
 
+import game.event.GameEvent;
+import game.object.Game;
 import game.debug.ui.LogVIew.LogView;
 import feathers.layout.VerticalLayout;
 import openfl.Lib;
@@ -25,8 +27,11 @@ class DebugHUD extends LayoutGroup {
     private var _favorList:FavorList;
     private var _statusList:StatusList;
 
-	public function new() {
+    public var game(default, null):Game;
+
+	public function new(game:Game) {
 		super();
+        this.game = game;
 		setup();
 	}
 
@@ -39,7 +44,16 @@ class DebugHUD extends LayoutGroup {
 		_setupDialogueBox();
 		_setupLogView();
         _setupFooterGroup();
+        _setupEventSubs();
 	}
+
+    private function _onPopulationChange(e:GameEvent):Void{
+        trace('pop change');
+    }
+
+    private function _setupEventSubs():Void{
+        game.eventDispatcher.addEventListener(GameEvent.POPULATION_CHANGE, _onPopulationChange);
+    }
 
 	private function _setupListGroup():Void {
 		var hLayout:HorizontalLayout = new HorizontalLayout();

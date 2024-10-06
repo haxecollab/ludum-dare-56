@@ -1,3 +1,5 @@
+package game.state;
+
 import openfl.events.EventDispatcher;
 import openfl.utils.Object;
 import haxe.ds.StringMap;
@@ -23,7 +25,8 @@ class StateManager {
 	private var textMap:StringMap<String>;
 	private var valueMap:StringMap<Float>;
 	private var numberMap:StringMap<Int>;
-	private var objectMap:StringMap<Dynamic>;
+	private var objectMap:StringMap<Object>;
+	private var arrayMap:StringMap<Array<Any>>;
 	private var switchMap:StringMap<Bool>;
 
 	// Constructor - private to enforce singleton pattern
@@ -41,8 +44,9 @@ class StateManager {
 	}
 
 	// Methods to handle text data
-	public function setText(key:String, value:String):Void {
+	public function setText(key:String, value:String):String {
 		textMap.set(key, value);
+		return value;
 	}
 
 	public function getText(key:String):String {
@@ -50,8 +54,9 @@ class StateManager {
 	}
 
 	// Methods to handle float data
-	public function setValue(key:String, value:Float):Void {
+	public function setValue(key:String, value:Float):Float {
 		valueMap.set(key, value);
+		return value;
 	}
 
 	public function getValue(key:String):Float {
@@ -59,8 +64,9 @@ class StateManager {
 	}
 
 	// Methods to handle integer data
-	public function setNumber(key:String, value:Int):Void {
+	public function setNumber(key:String, value:Int):Int {
 		numberMap.set(key, value);
+		return value;
 	}
 
 	public function getNumber(key:String):Int {
@@ -68,12 +74,23 @@ class StateManager {
 	}
 
 	// Methods to handle dynamic data
-	public function setObject(key:String, value:Dynamic):Void {
+	public function setObject(key:String, value:Object):Object {
 		objectMap.set(key, value);
+		return value;
 	}
 
-	public function getObject(key:String):Dynamic {
+	public function getObject(key:String):Object{
 		return objectMap.exists(key) ? objectMap.get(key) : null;
+	}
+
+	// Methods to handle array data
+	public function setArray(key:String, value:Array<Any>):Array<Any> {
+		arrayMap.set(key, value);
+		return value;
+	}
+
+	public function getArray(key:String):Array<Any> {
+		return arrayMap.exists(key) ? arrayMap.get(key) : null;
 	}
 
     // Methods to handle switches
@@ -91,6 +108,7 @@ class StateManager {
 		valueMap = new StringMap();
 		numberMap = new StringMap();
 		objectMap = new StringMap();
+		arrayMap = new StringMap();
 		switchMap = new StringMap();
         
         eventDispatcher = new EventDispatcher();
@@ -103,6 +121,7 @@ class StateManager {
 			valueMap: valueMap,
 			numberMap: numberMap,
 			objectMap: objectMap,
+			arrayMap: arrayMap,
 			switchMap: switchMap
 		});
 		return json;
@@ -123,6 +142,9 @@ class StateManager {
 		}
 		for (key in data.objectMap) {
 			current.objectMap.set(key, data.objectMap[key]);
+		}
+		for (key in data.objectMap) {
+			current.arrayMap.set(key, data.arrayMap[key]);
 		}
 		for (key in data.switchMap) {
 			current.switchMap.set(key, data.switchMap[key]);
@@ -146,6 +168,10 @@ class StateManager {
 		return objectMap.exists(key);
 	}
 
+	public function hasArray(key:String):Bool {
+		return arrayMap.exists(key);
+	}
+
 	public function hasSwitch(key:String):Bool {
 		return switchMap.exists(key);
 	}
@@ -161,6 +187,9 @@ class StateManager {
 			return true;
 		}
 		if (hasObject(key)) {
+			return true;
+		}
+		if (hasArray(key)) {
 			return true;
 		}
 		if (hasSwitch(key)) {
