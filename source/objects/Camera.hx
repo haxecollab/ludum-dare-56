@@ -1,5 +1,6 @@
 package objects;
 
+import game.Preferences;
 import flixel.FlxObject;
 
 class Camera extends FlxCamera {
@@ -9,9 +10,9 @@ class Camera extends FlxCamera {
     public var exceptedZoom(default, set):Float = 1;
 
     /**
-     * Controls the intensity of the mouse drift effect.
+     * Controls the region triggering the mouse drift effect.
      */
-    public var driftSensitivity:Float = 1;
+    public var driftSensitivity:Float = Preferences.driftSensitivity;
 
     /**
      * Determines whether the player can control the camera.

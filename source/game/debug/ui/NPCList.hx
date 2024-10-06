@@ -34,7 +34,10 @@ class NPCList extends LayoutGroup{
         var vLayout:VerticalLayout = new VerticalLayout();
         this.layout = vLayout;
 
-        var name:String = DataUtil.getObjectByID(this._id, AssetManager.getData(CLANS).clans).name + " NPCs";
+        var clanData:Dynamic = AssetManager.getData(CLANS);
+        var object:Dynamic = DataUtil.getObjectByID(this._id, clanData.clans);
+        
+        var name:String = Std.string(object.name + " NPCs");
         this._header = new Header(name);
         this._header.width = (Lib.current.stage.stageWidth / 6) - 2;
         addChild(this._header);

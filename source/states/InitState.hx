@@ -1,6 +1,7 @@
 package states;
 
 import flixel.addons.transition.TransitionData;
+import game.Preferences;
 import haxe.ui.Toolkit;
 
 class InitState extends FlxState {
@@ -16,6 +17,10 @@ class InitState extends FlxState {
 		FlxTransitionableState.defaultTransIn = new TransitionData(FADE, FlxColor.BLACK, .25, new FlxPoint(-1));
 		FlxTransitionableState.defaultTransOut = new TransitionData(FADE, FlxColor.BLACK, .25, new FlxPoint(1));
 
+		// Load preferences
+		Preferences.load();
+
+		// Go to Main Menu
 		FlxG.switchState(() -> new MainMenuState());
 	}
 }
