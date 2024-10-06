@@ -18,6 +18,12 @@ class DebugHUD extends LayoutGroup {
 	private var _dialogGroup:LayoutGroup;
 	private var _dialogueBox:DialogueBox;
 	private var _logView:LogView;
+    private var _footerGroup:LayoutGroup;
+    private var _taskList:TaskList;
+    private var _itemsList:ItemsList;
+    private var _relicsList:RelicsList;
+    private var _favorList:FavorList;
+    private var _statusList:StatusList;
 
 	public function new() {
 		super();
@@ -32,6 +38,7 @@ class DebugHUD extends LayoutGroup {
 		_setupListGroup();
 		_setupDialogueBox();
 		_setupLogView();
+        _setupFooterGroup();
 	}
 
 	private function _setupListGroup():Void {
@@ -68,11 +75,34 @@ class DebugHUD extends LayoutGroup {
 		this._dialogueBox = new DialogueBox();
 		this._dialogueBox.width = Lib.current.stage.stageWidth - 216;
 		this._dialogGroup.addChild(_dialogueBox);
-
 	}
 
 	private function _setupLogView():Void {
 		this._logView = new LogView();
 		this._dialogGroup.addChild(_logView);
 	}
+
+    private function _setupFooterGroup():Void{
+        var hLayout:HorizontalLayout = new HorizontalLayout();
+        hLayout.gap = 2;
+        this._footerGroup = new LayoutGroup();
+        this._footerGroup.layout = hLayout;
+        this.addChild(_footerGroup);
+
+        _taskList = new TaskList();
+        this._footerGroup.addChild(_taskList);
+
+        _itemsList = new ItemsList();
+        this._footerGroup.addChild(_itemsList);
+
+        _relicsList = new RelicsList();
+        this._footerGroup.addChild(_relicsList);
+        
+        _favorList = new FavorList();
+        this._footerGroup.addChild(_favorList);
+
+        _statusList = new StatusList();
+        this._footerGroup.addChild(_statusList);
+        
+    }
 }
