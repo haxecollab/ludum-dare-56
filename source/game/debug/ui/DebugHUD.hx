@@ -1,5 +1,8 @@
 package game.debug.ui;
 
+import game.state.StateManager;
+import haxe.macro.Expr.Case;
+import game.enums.Clan;
 import game.event.GameEvent;
 import game.object.Game;
 import game.debug.ui.LogVIew.LogView;
@@ -45,10 +48,27 @@ class DebugHUD extends LayoutGroup {
 		_setupLogView();
         _setupFooterGroup();
         _setupEventSubs();
+        _setupDataSync();
 	}
 
     private function _onPopulationChange(e:GameEvent):Void{
-        trace('pop change');
+        switch((e.data:Clan)){
+            case FIRE:
+            case ICE:
+            case LEAF:
+            case WATER:
+            case TURTLE:
+            case PEBBLE:
+        }
+    }
+
+    private function _setupDataSync():Void{
+        this.pebbleNPCList.setData(cast StateManager.current.getArray(Game.PEBBLE_NPCS_STATE));
+        this.fireNPCList.setData(cast StateManager.current.getArray(Game.FIRE_NPCS_STATE));
+        this.waterNPCList.setData(cast StateManager.current.getArray(Game.WATER_NPCS_STATE));
+        this.leafNPCList.setData(cast StateManager.current.getArray(Game.LEAF_NPCS_STATE));
+        this.turtleNPCList.setData(cast StateManager.current.getArray(Game.TURTLE_NPCS_STATE));
+        this.iceNPCList.setData(cast StateManager.current.getArray(Game.ICE_NPCS_STATE));
     }
 
     private function _setupEventSubs():Void{

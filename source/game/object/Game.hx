@@ -96,7 +96,7 @@ class Game {
 
         npcArray.push(npc);
         
-        dispatchEvent(new GameEvent(GameEvent.POPULATION_CHANGE));
+        dispatchEvent(new GameEvent(GameEvent.POPULATION_CHANGE, clan));
     }
 
 

@@ -15,6 +15,8 @@ class AssetMacro {
 		switch (type) {
 			case "GameData":
 				buildGameDataEnum(enumFields);
+			case "ImageData":
+				buildImageDataEnum(enumFields);
 		}
 
 		return enumFields;
@@ -37,6 +39,18 @@ class AssetMacro {
 		var gameData:Array<Dynamic> = (data : Dynamic).gameData;
 
 		for (data in gameData) {
+			var id = data.id;
+			var fieldName = id.toUpperCase();
+			fields.push(makeEnumField(fieldName, FVar(macro :String, macro $v{id})));
+		}
+	}
+
+	static function buildImageDataEnum(fields:Array<Field>) {
+		var json = sys.io.File.getContent("assets/manifest.json");
+		var data = Json.parse(json);
+		var imageData:Array<Dynamic> = (data : Dynamic).imageData;
+
+		for (data in imageData) {
 			var id = data.id;
 			var fieldName = id.toUpperCase();
 			fields.push(makeEnumField(fieldName, FVar(macro :String, macro $v{id})));
