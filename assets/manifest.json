@@ -1,0 +1,24 @@
+{
+	"gameData":[
+		{
+			"id":"dialogue",
+			"data":"data/dialogue.json"
+		},		
+		{
+			"id":"clans",
+			"data":"data/clans.json"
+		},		
+		{
+			"id":"items",
+			"data":"data/items.json"
+		},		
+		{
+			"id":"definitions",
+			"data":"data/definitions.json"
+		},		
+		{
+			"id":"names",
+			"data":"data/names.json"
+		}						
+	]
+}
