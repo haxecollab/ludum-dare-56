@@ -4,7 +4,7 @@
 Programmer, Dad, nerd, and tinkerer of all things digital
 
 ## Role
-TBD
+Game Lead, Primary Developer
 
 
 ## Personal Links

@@ -4,7 +4,7 @@
 Proud Haxe evangelist and reluctant Rust developer
 
 ## Role
-TBD
+Maintainer, Menu Developer
 
 
 ## Personal Links

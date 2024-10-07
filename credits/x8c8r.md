@@ -4,7 +4,7 @@
 I write code and that's pretty much all I am good at
 
 ## Role
-TBD
+Game Design
 
 
 ## Personal Links
