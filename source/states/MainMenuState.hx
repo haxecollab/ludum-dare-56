@@ -2,7 +2,7 @@ package states;
 
 class MainMenuState extends FlxTransitionableState {
 	override public function create() {
-		final bg = new FlxSprite().loadGraphic(AssetPaths.mainmenubg__png);
+		final bg = new FlxSprite().loadGraphic(AssetPaths.tiny_realms__png);
 		bg.setGraphicSize(FlxG.width, FlxG.height);
 		bg.updateHitbox();
 		bg.alpha = .6;

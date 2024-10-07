@@ -1,5 +1,7 @@
 package game.object;
 
+import game.settings.Global;
+import util.RNGUtil;
 import openfl.geom.Point;
 
 class NPC {
@@ -30,5 +32,17 @@ class NPC {
 	public function setLocation(x:Float, y:Float):Void {
 		this.x = x;
 		this.y = y;
+	}
+
+	public static function generate(clanId:String, baseMorale:Float = 100):NPC {
+		var name:String = RNGUtil.generateRandomName(clanId);
+		var clan:String = clanId;
+		var morale:Float = baseMorale * Global.difficulty;
+		var health:Int = Math.floor(100 * Global.difficulty);
+		var productivity:Float = 100 * Global.difficulty;
+		var favor:Int = 0;
+		var x:Float = 0;
+		var y:Float = 0;
+		return new NPC(name, clan, morale, health, productivity, favor, x, y);
 	}
 }

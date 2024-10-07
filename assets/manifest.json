@@ -20,5 +20,11 @@
 			"id":"names",
 			"data":"data/names.json"
 		}						
+	],
+	"imageData":[
+		{
+			"id":"dialogue_icon",
+			"data":"images/icons/dialogue_icon.png"
+		}
 	]
 }

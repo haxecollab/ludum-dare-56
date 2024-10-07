@@ -1,4 +1,5 @@
 *.diff
+*.png binary
 *.hxproj
 .unittest
 flixel.zip
