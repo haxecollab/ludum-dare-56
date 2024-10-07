@@ -78,8 +78,13 @@ class DebugHUD extends LayoutGroup {
         this.iceNPCList.setData(cast StateManager.current.getArray(Game.ICE_NPCS_STATE));
     }
 
+    private function _onUpdateStats(e:GameEvent):Void{
+        _statusList.updateStats(game.population, game.illness, game.resources, game.morale, game.gloom);
+    }
+
     private function _setupEventSubs():Void{
-        game.eventDispatcher.addEventListener(GameEvent.POPULATION_CHANGE, _onPopulationChange);
+       game.eventDispatcher.addEventListener(GameEvent.POPULATION_CHANGE, _onPopulationChange);
+        game.eventDispatcher.addEventListener(GameEvent.UPDATE_STATS, _onUpdateStats);
     }
 
 	private function _setupListGroup():Void {

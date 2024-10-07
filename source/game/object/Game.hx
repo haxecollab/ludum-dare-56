@@ -31,12 +31,11 @@ class Game {
     public static inline var PEBBLE_DIPLOMACY_STATE:String = "pebble_diplomacy";
 
     //ATTRIBUTE STATES
-    
 
-    public var population:Int;
-    public var morale:Float;
-    public var illness:Float;
-    public var resources:Int;
+    public var population(get, null):Int;
+    public var morale(get, null):Float;
+    public var illness(get, null):Float;
+    public var resources(get, null):Int;
     public var gloom:Int;
 
     public var leafDiplomacy(get, set):Float;
@@ -56,6 +55,7 @@ class Game {
     private var _turtleNPCs:Array<NPC>;
     private var _pebbleNPCs:Array<NPC>;
     private var _log:Array<String>;
+    private var _relics:Array<String>;
 
     public var eventDispatcher:EventDispatcher;
 
@@ -123,6 +123,22 @@ class Game {
         return StateManager.current.setValue(PEBBLE_DIPLOMACY_STATE, value);
     }
 
+    private function get_population():Int {
+        return 0;
+    }
+
+    private function get_morale():Float {
+        return 0;
+    }
+
+    private function get_illness():Float {
+        return 0;
+    }
+
+   private function get_resources():Int {
+        return 0;
+    }
+
     public function new(){
         setup();
     }
@@ -131,6 +147,7 @@ class Game {
         eventDispatcher = new EventDispatcher();
         timeModifier = 1.0;        
         this._log = cast StateManager.current.setArray(LOG_STATE, []);
+        this._relics = cast StateManager.current.setArray(LOG_STATE, []);
 
         _setupNPCStates();
         _setupDiplomacyStates();

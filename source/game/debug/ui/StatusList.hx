@@ -1,5 +1,7 @@
 package game.debug.ui;
 
+import game.object.Game;
+import feathers.skins.RectangleSkin;
 import feathers.controls.Header;
 import feathers.layout.VerticalLayout;
 import feathers.controls.LayoutGroup;
@@ -9,56 +11,68 @@ import feathers.controls.dataRenderers.LayoutGroupItemRenderer;
 import feathers.data.ArrayCollection;
 import feathers.controls.ListView;
 
-//Probably just create a base class headerlist since we have duplicate features here
-class StatusList extends LayoutGroup{
-    private var _listView:ListView;
-    private var _header:Header;
+// Probably just create a base class headerlist since we have duplicate features here
+class StatusList extends LayoutGroup {
+	private var _statusGroup:LayoutGroup;
+	private var _header:Header;
+	private var _populationLabel:Label;
+	private var _illnessLabel:Label;
+	private var _resourcesLabel:Label;
+	private var _moraleLabel:Label;
+	private var _gloomLabel:Label;
 
-    public function new(){
-        super();       
-        setup();
-    }
+	public function new() {
+		super();
+		setup();
+	}	
 
-    public function setData(data:Array<String>){
-        this._listView.dataProvider = new ArrayCollection(data);
-    }
+	private function setup():Void {
+		var vLayout:VerticalLayout = new VerticalLayout();
+		this.layout = vLayout;
 
-    private function setup():Void{
-        var vLayout:VerticalLayout = new VerticalLayout();
-        this.layout = vLayout;
+		this._header = new Header("Status");
+		this._header.width = 212;
+		this.addChild(this._header);
 
-        this._header = new Header("Status");
-        this._header.width = 212;
-        this.addChild(this._header);
+		_setupStatusGroup();
+		_setupStatusLabels();
+	}
 
-        this._listView = new ListView();
-       // this._listView.itemRendererRecycler = DisplayObjectRecycler.withFunction(_renderItem);
-        this._listView.width = this._header.width;
-        this._listView.height = 212;
-        addChild(this._listView);
-    }
+	private function _setupStatusGroup():Void {
+		var vLayout:VerticalLayout = new VerticalLayout();
+		vLayout.gap = 2;
+		this._statusGroup = new LayoutGroup();
+		this._statusGroup.layout = vLayout;
+		this._statusGroup.backgroundSkin = new RectangleSkin(SolidColor(0xffffff));
+		this._statusGroup.width = this._header.width;
+		this._statusGroup.height = 212;
+		addChild(this._statusGroup);
+	}
 
-    private function _renderITem():LayoutGroupItemRenderer{
-        var itemRenderer = new LayoutGroupItemRenderer();
+	private function _setupStatusLabels():Void {
+		this._populationLabel = new Label();
+		this._statusGroup.addChild(this._populationLabel);
 
-        var layout = new HorizontalLayout(); 
-        layout.gap = 6.0;
-        layout.paddingTop = 4.0;
-        layout.paddingBottom = 4.0;
-        layout.paddingLeft = 6.0;
-        layout.paddingRight = 6.0;
-        itemRenderer.layout = layout;
-    
-        /* var icon = new AssetLoader();
-        icon.name = "loader";
-        itemRenderer.addChild(icon); */
-    
-        var label = new Label();
-        label.name = "label";
-        itemRenderer.addChild(label);
-    
-        return itemRenderer;
-    }
+		this._illnessLabel = new Label();
+		this._statusGroup.addChild(this._illnessLabel);
 
+		this._resourcesLabel = new Label();
+		this._statusGroup.addChild(this._resourcesLabel);
 
+		this._moraleLabel = new Label();
+		this._statusGroup.addChild(this._moraleLabel);
+
+		this._gloomLabel = new Label();
+		this._statusGroup.addChild(this._gloomLabel);
+
+		updateStats(0, 0, 0, 0, 0);
+	}
+
+	public function updateStats(population:Int, illness:Float, resources:Int, morale:Float, gloom:Int):Void {
+		this._populationLabel.text = 'Population($population)';
+		this._illnessLabel.text = 'Illness($illness)';
+		this._resourcesLabel.text = 'Resources($resources)';
+		this._moraleLabel.text = 'Morale($morale)';
+		this._gloomLabel.text = 'Gloom($gloom)';
+	}
 }
