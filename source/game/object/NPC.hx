@@ -5,6 +5,9 @@ import util.RNGUtil;
 import openfl.geom.Point;
 
 class NPC {
+	public static inline var MAX_X:Float = 1292;
+	public static inline var MAX_Y:Float = 608;
+
 	public var name:String;
 	public var clan:String;
 	public var morale:Float;
@@ -39,8 +42,9 @@ class NPC {
 		var name:String = RNGUtil.generateRandomName(clanId);
 		var clan:String = clanId;
 
-		var x:Float = 0;
-		var y:Float = 0;
+		var x:Float = Std.random(Std.int(MAX_X));
+		var y:Float = Std.random(Std.int(MAX_Y));
+		
 		return new NPC(name, clan, x, y);
 	}
 }
