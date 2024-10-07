@@ -26,5 +26,16 @@
 			"id":"dialogue_icon",
 			"data":"images/icons/dialogue_icon.png"
 		}
+	],
+
+	"audioData":[
+		{
+			"id":"background_track_0_mp3",
+			"data":"audio/bgm/Little_Creatures v2_(master).mp3"
+		},
+		{
+			"id":"background_track_0_oga",
+			"data":"audio/bgm/Little_Creatures_v2_(master).ogg"
+		}
 	]
 }

@@ -1,5 +1,10 @@
 package;
 
+import game.asset.AudioData;
+import sound.SoundCollection;
+import sound.SoundAsset;
+import sound.SoundManager;
+import lime.media.AudioManager;
 import haxe.Timer;
 import openfl.events.Event;
 import game.object.Game;
@@ -22,11 +27,13 @@ class Main extends Sprite {
 		
 		openflRoot = this;
 		addChild(new FlxGame(1280, 720, InitState, 60, 60, true));
-	}
-
-	private function loadRoot():Void{
 		AssetManager.init();
 		StateManager.init();
+
+		SoundManager.playBGM(AudioData.BACKGROUND_TRACK_0_MP3);
+	}
+
+	private function loadRoot():Void{	
 		game = new Game();		
 		addChild(new DebugHUD(game));
 

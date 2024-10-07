@@ -14,6 +14,8 @@ class NPC {
 	public var x:Float;
 	public var y:Float;
 
+	public var dialogue:Dialogue;
+
 	public function new(name:String, clan:String, morale:Float, health:Int, productivity:Float, favor:Int, x:Float, y:Float) {
 		this.name = name;
 		this.clan = clan;
@@ -32,6 +34,10 @@ class NPC {
 	public function setLocation(x:Float, y:Float):Void {
 		this.x = x;
 		this.y = y;
+	}
+
+	public function update():Void{
+		
 	}
 
 	public static function generate(clanId:String, baseMorale:Float = 100):NPC {
