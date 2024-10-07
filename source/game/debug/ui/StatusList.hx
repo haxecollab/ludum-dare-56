@@ -1,15 +1,11 @@
 package game.debug.ui;
 
-import game.object.Game;
 import feathers.skins.RectangleSkin;
 import feathers.controls.Header;
 import feathers.layout.VerticalLayout;
 import feathers.controls.LayoutGroup;
 import feathers.controls.Label;
-import feathers.layout.HorizontalLayout;
-import feathers.controls.dataRenderers.LayoutGroupItemRenderer;
-import feathers.data.ArrayCollection;
-import feathers.controls.ListView;
+
 
 // Probably just create a base class headerlist since we have duplicate features here
 class StatusList extends LayoutGroup {

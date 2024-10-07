@@ -11,7 +11,7 @@ class GameEvent extends Event {
 
     public var data:Object;
 
-    public function new(type:String, data:Object){
+    public function new(type:String, ?data:Object){
         super(type);
         this.data = data;
     }

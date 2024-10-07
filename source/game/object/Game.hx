@@ -30,6 +30,7 @@ class Game {
     public static inline var TURTLE_DIPLOMACY_STATE:String = "turtle_diplomacy";
     public static inline var PEBBLE_DIPLOMACY_STATE:String = "pebble_diplomacy";
 
+    private static inline var STATS_TIMER:Float = 3.0;
     //ATTRIBUTE STATES
 
     public var population(get, null):Int;
@@ -58,6 +59,8 @@ class Game {
     private var _relics:Array<String>;
 
     public var eventDispatcher:EventDispatcher;
+
+    private var _statsTimer:Float;
 
     private function get_timeModifier():Float{
         return StateManager.current.getValue(TIME_MODIFIER_STATE);
@@ -124,19 +127,19 @@ class Game {
     }
 
     private function get_population():Int {
-        return 0;
+        return 1;
     }
 
     private function get_morale():Float {
-        return 0;
+        return 1;
     }
 
     private function get_illness():Float {
-        return 0;
+        return 1;
     }
 
    private function get_resources():Int {
-        return 0;
+        return 1;
     }
 
     public function new(){
@@ -145,7 +148,8 @@ class Game {
 
     private function setup(){
         eventDispatcher = new EventDispatcher();
-        timeModifier = 1.0;        
+        timeModifier = 1.0;      
+        _statsTimer = 3.0;  
         this._log = cast StateManager.current.setArray(LOG_STATE, []);
         this._relics = cast StateManager.current.setArray(LOG_STATE, []);
 
@@ -155,7 +159,7 @@ class Game {
     }
 
     private function _setupDiplomacyStates():Void {
-        leafDiplomacy = 0.0;
+        leafDiplomacy = 50.0 * Global.difficulty;
         fireDiplomacy = 0.0;
         waterDiplomacy = 0.0;
         iceDiplomacy = 0.0;
@@ -210,11 +214,22 @@ class Game {
 
     public function update(dt:Float){
         _update(dt * this.timeModifier);
+        
 
+        
     }
 
     private inline function _update(explicitDt:Float):Void{
+        _updateStatsTimer(explicitDt);
+        totalTime += explicitDt;
+    }
 
+    private inline function _updateStatsTimer(dt:Float){
+        _statsTimer -= dt;
+        if(_statsTimer <= 0){
+            _statsTimer += STATS_TIMER;
+            dispatchEvent(new GameEvent(GameEvent.UPDATE_STATS));            
+        }
     }
 
     public inline function dispatchEvent(event:Event):Void{
