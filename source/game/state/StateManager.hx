@@ -98,7 +98,7 @@ class StateManager {
 		switchMap.set(key, value);
 	}
 
-	public function getSwitch(key:String):Bool {
+	public function getSwitch(key:String):Null<Bool> {
 		return switchMap.exists(key) ? switchMap.get(key) : null;
 	}
 
