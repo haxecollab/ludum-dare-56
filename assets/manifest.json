@@ -23,11 +23,14 @@
 	],
 	"imageData":[
 		{
+			"id":"map_bg",
+			"data":"images/background/play_map.png"
+		},
+		{
 			"id":"dialogue_icon",
 			"data":"images/icons/dialogue_icon.png"
 		}
 	],
-
 	"audioData":[
 		{
 			"id":"background_track_0_mp3",

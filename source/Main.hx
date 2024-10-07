@@ -1,5 +1,7 @@
 package;
 
+import game.level.GameMap;
+import openfl.display.Stage;
 import game.enums.NPCBehavior;
 import game.asset.AudioData;
 import sound.SoundCollection;
@@ -23,6 +25,8 @@ class Main extends Sprite {
 	var game:Game;
 	var lastFrameTime:Float = 0;
 
+	public var gameStage:Sprite;
+	public var gameMap:GameMap;
 	public function new() {
 		super();	
 		
@@ -40,9 +44,14 @@ class Main extends Sprite {
 		
 	}
 
-	private function loadRoot():Void{	
+	private function loadRoot():Void{
+		gameStage = new Sprite();
+		gameMap = new GameMap();
 		game = new Game();		
-		addChild(new DebugHUD(game));
+
+		FlxG.addChildBelowMouse(gameStage);
+		gameStage.addChild(gameMap);
+		//gameStage.addChild(new DebugHUD(game));
 
 		game.newGame();
 
