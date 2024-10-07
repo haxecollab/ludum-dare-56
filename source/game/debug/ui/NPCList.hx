@@ -57,7 +57,6 @@ class NPCList extends LayoutGroup {
 		this._header = new Header();
 		this._header.width = (Lib.current.stage.stageWidth / 6) - 2;
 		addChild(this._header);
-       // validateHeaderData();
 
 		this._listView = new ListView();
 		this._listView.itemRendererRecycler = DisplayObjectRecycler.withFunction(_renderNPC);
