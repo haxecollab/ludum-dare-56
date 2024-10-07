@@ -78,6 +78,7 @@ package ui;
 class Credits extends haxe.ui.containers.VBox {
 	override public function new() {
 		super();
+		
 		final contribs = Contributors.getContributors();
 		FlxG.random.shuffle(contribs);
 
