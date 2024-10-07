@@ -46,9 +46,10 @@ class Main extends Sprite {
 
 	private function loadRoot():Void{
 		gameStage = new Sprite();
-		gameMap = new GameMap();
-		game = new Game();		
-
+		
+		game = new Game();
+		gameMap = new GameMap(game);	
+		
 		FlxG.addChildBelowMouse(gameStage);
 		gameStage.addChild(gameMap);
 		//gameStage.addChild(new DebugHUD(game));

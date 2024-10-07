@@ -44,11 +44,11 @@ class Game {
 
 	// ATTRIBUTE STATES
 
-	private static inline var MORALE_STATE:String = "morale";
-	private static inline var ILLNESS_STATE:String = "illness";
-	private static inline var RESOURCES_STATE:String = "resources";
-	private static inline var PRODUCTIVITY_STATE:String = "productivity";
-	private static inline var GLOOM_STATE:String = "gloom";
+	public static inline var MORALE_STATE:String = "morale";
+	public static inline var ILLNESS_STATE:String = "illness";
+	public static inline var RESOURCES_STATE:String = "resources";
+	public static inline var PRODUCTIVITY_STATE:String = "productivity";
+	public static inline var GLOOM_STATE:String = "gloom";
 
 	public var population(get, null):Int;
 	public var morale(get, set):Float;
@@ -294,9 +294,9 @@ class Game {
 		_setupDiplomacyStates();
 		_setupAttributeStates();
 
-		for(i in 0...100){
+		/* for(i in 0...100){
 			trace(RNGUtil.generateBehavior(morale, resources, illness, Std.random(100)));
-		}
+		} */
 	}
 
 	private function _setupAttributeStates(){
@@ -340,6 +340,11 @@ class Game {
 
 		for (i in 0...startingNPCs) {
 			increasePopulation(LEAF);
+			increasePopulation(TURTLE);
+			increasePopulation(FIRE);
+			increasePopulation(WATER);
+			increasePopulation(ICE);
+			increasePopulation(PEBBLE);
 		}
 	}
 
@@ -418,6 +423,34 @@ class Game {
 	private inline function _update(explicitDt:Float):Void {
 		this._updateTimers(explicitDt);
 		totalTime += explicitDt;
+
+		_updateNPCs(explicitDt);
+	}
+
+	private function _updateNPCs(dt:Float):Void{
+		for(npc in _fireNPCs){
+			npc.update(dt);
+		}
+
+		for(npc in _iceNPCs){
+			npc.update(dt);
+		}
+
+		for(npc in _leafNPCs){
+			npc.update(dt);
+		}
+
+		for(npc in _pebbleNPCs){
+			npc.update(dt);
+		}
+
+		for(npc in _waterNPCs){
+			npc.update(dt);
+		}
+
+		for(npc in _turtleNPCs){
+			npc.update(dt);
+		}
 	}
 
 	private inline function _updateTimers(dt:Float) {

@@ -1,5 +1,12 @@
 package game.level;
 
+import game.hud.DialogueView;
+import openfl.display.BitmapData;
+import game.enums.Clan;
+import game.state.StateManager;
+import game.object.NPC;
+import game.event.GameEvent;
+import game.object.Game;
 import openfl.geom.Rectangle;
 import openfl.display.Shape;
 import openfl.events.MouseEvent;
@@ -24,10 +31,34 @@ class GameMap extends Sprite {
 	var turtleRect:Rectangle;
 	var waterRect:Rectangle;
 
+	var fireContainer:Sprite;
+	var pebbleContainer:Sprite;
+	var iceContainer:Sprite;
+	var leafContainer:Sprite;
+	var turtleContainer:Sprite;
+	var waterContainer:Sprite;
+
 	public var debugView:Bool = #if debug true #else false #end;
 
-	public function new() {
+	var game:Game;
+
+	public static function addDialogue(headerText:String, bodyText:String):Void{
+		var dialogueView:DialogueView = new DialogueView();
+		dialogueView.setHeaderText(headerText);
+		dialogueView.setBodyText(bodyText);
+		dialogueView.validateNow();
+		dialogueView.x = (Lib.current.stage.stageWidth/ 2) - (dialogueView.width/2);
+		dialogueView.y = (Lib.current.stage.stageHeight/ 2) - (dialogueView.height/2);
+		mapView.addChild(dialogueView);
+
+	}
+
+	public static var mapView:GameMap;
+
+	public function new(game:Game) {
 		super();
+		mapView = this;
+		this.game = game;
 		camera = new Sprite();
 		addChild(camera);
 
@@ -42,6 +73,103 @@ class GameMap extends Sprite {
 		addEventListener(Event.ADDED_TO_STAGE, _init);
 
 		drawDebugRectangles();
+		_setupNPCs();
+
+	}
+
+	private function _setupNPCs():Void {
+		fireContainer = new Sprite();
+		fireContainer.x = fireRect.x;
+		fireContainer.y = fireRect.y;
+		camera.addChild(fireContainer);
+
+		iceContainer = new Sprite();
+		iceContainer.x = iceRect.x;
+		iceContainer.y = iceRect.y;
+		camera.addChild(iceContainer);
+
+		leafContainer = new Sprite();
+		leafContainer.x = leafRect.x;
+		leafContainer.y = leafRect.y;
+		camera.addChild(leafContainer);
+
+		waterContainer = new Sprite();
+		waterContainer.x = waterRect.x;
+		waterContainer.y = waterRect.y;
+		camera.addChild(waterContainer);
+
+		pebbleContainer = new Sprite();
+		pebbleContainer.x = pebbleRect.x;
+		pebbleContainer.y = pebbleRect.y;
+		camera.addChild(pebbleContainer);
+
+		turtleContainer = new Sprite();
+		turtleContainer.x = turtleRect.x;
+		turtleContainer.y = turtleRect.y;
+		camera.addChild(turtleContainer);
+
+		game.eventDispatcher.addEventListener(GameEvent.POPULATION_CHANGE, _onPopulationChange);
+	}
+
+	private function _onPopulationChange(e:GameEvent):Void {
+		var npcArray:Array<NPC> = cast switch ((e.data : Clan)) {
+			case FIRE:
+				StateManager.current.getArray(Game.FIRE_NPCS_STATE);
+			case ICE:
+				StateManager.current.getArray(Game.ICE_NPCS_STATE);
+			case LEAF:
+				StateManager.current.getArray(Game.LEAF_NPCS_STATE);
+			case WATER:
+				StateManager.current.getArray(Game.WATER_NPCS_STATE);
+			case TURTLE:
+				StateManager.current.getArray(Game.TURTLE_NPCS_STATE);
+			case PEBBLE:
+				StateManager.current.getArray(Game.PEBBLE_NPCS_STATE);
+		}
+		validateNPCS(npcArray);
+	}
+
+	private function validateNPCS(npcs:Array<NPC>):Void {
+		for (npc in npcs) {
+			npc.sprite = drawNPC(npc.clan);
+			npc.listenForButton();
+			npc.validateLocation();
+		}
+	}
+
+	private function drawNPC(clan:Clan):NPCSprite {		
+
+		var bitmapData:BitmapData;
+		var sprite:NPCSprite;
+
+		switch (clan) {
+			case FIRE:
+				bitmapData = AssetManager.getImage(ImageData.FIRE_SPRITE_0);
+				sprite = new NPCSprite(bitmapData);
+				this.fireContainer.addChild(sprite);
+			case ICE:
+				bitmapData = AssetManager.getImage(ImageData.ICE_SPRITE_0);
+				sprite = new NPCSprite(bitmapData);
+				this.iceContainer.addChild(sprite);
+			case LEAF:
+				bitmapData = AssetManager.getImage(ImageData.LEAF_SPRITE_0);
+				sprite = new NPCSprite(bitmapData);
+				this.leafContainer.addChild(sprite);
+			case WATER:
+				bitmapData = AssetManager.getImage(ImageData.WATER_SPRITE_0);
+				sprite = new NPCSprite(bitmapData);
+				this.waterContainer.addChild(sprite);
+			case TURTLE:
+				bitmapData = AssetManager.getImage(ImageData.TURTLE_SPRITE_0);
+				sprite = new NPCSprite(bitmapData);
+				this.turtleContainer.addChild(sprite);
+			case PEBBLE:
+				bitmapData = AssetManager.getImage(ImageData.PEBBLE_SPRITE_0);
+				sprite = new NPCSprite(bitmapData);
+				this.pebbleContainer.addChild(sprite);
+		}
+
+		return sprite;
 	}
 
 	private function _init(e:Event):Void {
@@ -49,7 +177,6 @@ class GameMap extends Sprite {
 		stage.addEventListener(MouseEvent.MOUSE_WHEEL, _onMouseWheel);
 		stage.addEventListener(Event.ENTER_FRAME, _onEnterFrame);
 
-		// Center the camera initially
 		camera.x = (stage.stageWidth - background.width) / 2;
 		camera.y = (stage.stageHeight - background.height) / 2;
 	}
