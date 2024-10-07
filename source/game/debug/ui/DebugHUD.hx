@@ -82,9 +82,14 @@ class DebugHUD extends LayoutGroup {
 		_statusList.updateStats(game.population, game.illness, game.resources, game.morale, game.gloom);
 	}
 
+	private function _onAcquireRelic(e:GameEvent):Void{
+		_relicsList.validateRelics();
+	}
+
 	private function _setupEventSubs():Void {
 		game.eventDispatcher.addEventListener(GameEvent.POPULATION_CHANGE, _onPopulationChange);
 		game.eventDispatcher.addEventListener(GameEvent.UPDATE_STATS, _onUpdateStats);
+		game.eventDispatcher.addEventListener(GameEvent.ACQUIRE_RELIC, _onAcquireRelic);
 	}
 
 	private function _setupListGroup():Void {

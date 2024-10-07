@@ -9,7 +9,6 @@ import feathers.layout.VerticalLayout;
 import feathers.controls.LayoutGroup;
 import feathers.controls.Label;
 
-//Probably just create a base class headerlist since we have duplicate features here
 class FavorList extends LayoutGroup {
 	private var _diplomacyGroup:LayoutGroup;
 	private var _header:Header;

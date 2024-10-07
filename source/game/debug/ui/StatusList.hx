@@ -7,7 +7,6 @@ import feathers.controls.LayoutGroup;
 import feathers.controls.Label;
 
 
-// Probably just create a base class headerlist since we have duplicate features here
 class StatusList extends LayoutGroup {
 	private var _statusGroup:LayoutGroup;
 	private var _header:Header;

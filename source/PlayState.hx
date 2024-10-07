@@ -15,7 +15,7 @@ class PlayState extends FlxState {
 		super.create();
 		
 		#if text_only
-		CursorHelper.useCustomCursors = false;
+		FlxG.mouse.useSystemCursor = true;
 		Mouse.show();
 		Main.start();
 		#end
