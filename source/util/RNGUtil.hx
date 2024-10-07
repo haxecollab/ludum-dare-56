@@ -1,5 +1,7 @@
 package util;
 
+import game.enums.NPCBehavior;
+import game.object.NPC;
 import game.asset.INames;
 import game.asset.AssetManager;
 import openfl.utils.Object;
@@ -19,34 +21,32 @@ class RNGUtil {
 		return prefix + suffix + " " + clanAffix;
 	}
 
-	// public static function generateBehavior(npc:NPC):NPCBehavior {
-	// 	var weights:Array<Float> = [
-	// 	/*NPCBehavior.MOVE => */        20 + (0.5 * morale),
-	// 	/*NPCBehavior.EVENT_ACTION => */10 + (0.3 * resources),
-	// 	/*NPCBehavior.DEATH => */       25 + (0.4 * illness),
-	// 	/*NPCBehavior.PROCREATE => */   15 + (0.5 * morale) + (0.4 * resources),
-	// 	/*NPCBehavior.IDLE => */        25 + (0.3 * illness) + (0.3 * productivity)
-	// 	];
+	public static function generateBehavior(morale:Float, resources:Int, illness:Float, productivity:Float):NPCBehavior {
+		var weights:Array<Float> = [
+		/*NPCBehavior.MOVE => */        50 + (0.5 * morale) + (0.1 * productivity),
+		/*NPCBehavior.EVENT_ACTION => */10 + (0.3 * resources) + (0.2 * productivity) + (0.1 * morale),
+		/*NPCBehavior.DEATH => */       Math.max(0, 5 + (0.8 * illness) - (0.2 * morale)),
+		/*NPCBehavior.PROCREATE => */   15 + (0.5 * morale) + (0.4 * resources),
+		/*NPCBehavior.IDLE => */        Math.max(0, 50 + (0.3 * illness) + (0.3 * productivity) - (0.2 * morale))
+		];
 
-	// 	var totalWeight:Float = 0;
-	// 	for (weight in weights) {
-	// 		totalWeight += weight;
-	// 	}
+		var totalWeight:Float = 0.0;
+		for (weight in weights) {
+			totalWeight += weight;
+		}
 
-	// 	// Generate a random number between 0 and totalWeight.
-	// 	var randomValue:Float = Math.random() * totalWeight;
+		var rng:Float = Math.random() * totalWeight;
 
-	// 	// Use the random number to determine the selected behavior.
-	// 	var cumulativeWeight:Float = 0;
-	// 	for (behavior in weights.keys()) {
-	// 		cumulativeWeight += weights[behavior];
-	// 		if (randomValue <= cumulativeWeight) {
-	// 			return behavior;
-	// 		}
-	// 	}
+		var cumulativeWeight:Float = 0.0;
+		for (i in 0...weights.length) {
+			cumulativeWeight += weights[i];
+			if (rng <= cumulativeWeight) {
+				return i;
+			}
+		}
 
-	// 	// Fallback (though logically should never happen if weights are calculated properly)
-	// 	return NPCBehavior.IDLE;
-	// }
+		// Fallback (though logically should never happen if weights are calculated properly)
+		return IDLE;
+	}
 }
 

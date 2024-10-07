@@ -1,5 +1,6 @@
 package game.object;
 
+import util.RNGUtil;
 import haxe.Timer;
 import openfl.events.Event;
 import game.event.GameEvent;
@@ -42,11 +43,18 @@ class Game {
 	public static inline var DAY_TIMER:Float = 10.0;
 
 	// ATTRIBUTE STATES
+
+	private static inline var MORALE_STATE:String = "morale";
+	private static inline var ILLNESS_STATE:String = "illness";
+	private static inline var RESOURCES_STATE:String = "resources";
+	private static inline var PRODUCTIVITY_STATE:String = "productivity";
+	private static inline var GLOOM_STATE:String = "gloom";
+
 	public var population(get, null):Int;
-	public var morale(get, null):Float;
-	public var illness(get, null):Float;
-	public var resources(get, null):Int;
-	public var gloom:Int;
+	public var morale(get, set):Float;
+	public var illness(get, set):Float;
+	public var resources(get, set):Int;
+	public var gloom(get, set):Float;
 
 	public var hasLeafRelic(get, set):Bool;
 	public var hasFireRelic(get, set):Bool;
@@ -156,20 +164,63 @@ class Game {
 	}
 
 	private function get_population():Int {
-		return 1;
+		var totalPop:Int = _leafNPCs.length;
+
+		if(hasFireRelic){
+			totalPop += _fireNPCs.length;
+		}
+
+		if(hasWaterRelic){
+			totalPop += _waterNPCs.length;
+		}
+
+		if(hasTurtleRelic){
+			totalPop += _turtleNPCs.length;
+		}
+
+		if(hasIceRelic){
+			totalPop += _iceNPCs.length;
+		}
+
+		if(hasPebbleRelic){
+			totalPop += _pebbleNPCs.length;
+		}
+
+		return totalPop;
 	}
 
 	private function get_morale():Float {
-		return 1;
+		return StateManager.current.getValue(MORALE_STATE);
+	}
+
+	private function set_morale(value:Float):Float{
+		return StateManager.current.setValue(MORALE_STATE, value);
 	}
 
 	private function get_illness():Float {
-		return 1;
+		return StateManager.current.getValue(ILLNESS_STATE);
+	}
+
+	private function set_illness(value:Float):Float{
+		return StateManager.current.setValue(ILLNESS_STATE, value);
 	}
 
 	private function get_resources():Int {
-		return 1;
+		return StateManager.current.getNumber(RESOURCES_STATE);
 	}
+
+	private function set_resources(value:Int):Int {
+		return StateManager.current.setNumber(RESOURCES_STATE, value);
+	}
+
+	private function get_gloom():Float {
+		return StateManager.current.getValue(GLOOM_STATE);
+	}
+
+	private function set_gloom(value:Float):Float{
+		return StateManager.current.setValue(GLOOM_STATE, value);
+	}
+
 
 	private function get_hasLeafRelic():Bool {
 		return StateManager.current.getSwitch(LEAF_RELIC_STATE);
@@ -241,6 +292,18 @@ class Game {
         _setupRelicStates();
 		_setupNPCStates();
 		_setupDiplomacyStates();
+		_setupAttributeStates();
+
+		for(i in 0...100){
+			trace(RNGUtil.generateBehavior(morale, resources, illness, Std.random(100)));
+		}
+	}
+
+	private function _setupAttributeStates(){
+		resources = 50;
+		morale = 50;
+		illness = 0;
+		gloom = 0;
 	}
 
     private function _setupRelicStates():Void{

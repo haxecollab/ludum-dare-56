@@ -1,5 +1,6 @@
 package;
 
+import game.enums.NPCBehavior;
 import game.asset.AudioData;
 import sound.SoundCollection;
 import sound.SoundAsset;
@@ -35,6 +36,8 @@ class Main extends Sprite {
 		#else
 		SoundManager.playBGM(AudioData.BACKGROUND_TRACK_0_OGG);
 		#end
+
+		
 	}
 
 	private function loadRoot():Void{	
