@@ -4,7 +4,7 @@
 Created Ceramic, makes games, apps, creative code and music
 
 ## Role
-TBD (offered to make music, could participate in programming if inspired too)
+Musician
 
 
 ## Personal Links

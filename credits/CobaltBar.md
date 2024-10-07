@@ -4,7 +4,7 @@
 Programmer, Streamer, and Gamer. I mess with FNF a lot.
 
 ## Role
-TBD
+Developer
 
 
 ## Personal Links
