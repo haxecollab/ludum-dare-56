@@ -30,7 +30,11 @@ class Main extends Sprite {
 		AssetManager.init();
 		StateManager.init();
 
+		#if html5
 		SoundManager.playBGM(AudioData.BACKGROUND_TRACK_0_MP3);
+		#else
+		SoundManager.playBGM(AudioData.BACKGROUND_TRACK_0_OGG);
+		#end
 	}
 
 	private function loadRoot():Void{	
