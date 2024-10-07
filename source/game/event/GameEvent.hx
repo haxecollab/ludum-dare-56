@@ -10,6 +10,7 @@ class GameEvent extends Event {
     public static inline var UPDATE_STATS:EventType<GameEvent> = "update_stats";
     public static inline var ACQUIRE_RELIC:EventType<GameEvent> = "acquire_relic";
     public static inline var DIPLOMACY_CHANGE:EventType<GameEvent> = "diplomacy_change";
+    public static inline var UPDATE_TIME:EventType<GameEvent> = "update_time";
 
     public var data:Object;
 

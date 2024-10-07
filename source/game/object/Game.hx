@@ -1,5 +1,6 @@
 package game.object;
 
+import haxe.Timer;
 import openfl.events.Event;
 import game.event.GameEvent;
 import openfl.events.EventDispatcher;
@@ -38,6 +39,7 @@ class Game {
 	public static inline var PEBBLE_DIPLOMACY_STATE:String = "pebble_diplomacy";
 
 	private static inline var STATS_TIMER:Float = 3.0;
+	public static inline var DAY_TIMER:Float = 10.0;
 
 	// ATTRIBUTE STATES
 	public var population(get, null):Int;
@@ -75,6 +77,7 @@ class Game {
 	public var eventDispatcher:EventDispatcher;
 
 	private var _statsTimer:Float;
+	private var _dayTimer:Float;
 
 	private function get_timeModifier():Float {
 		return StateManager.current.getValue(TIME_MODIFIER_STATE);
@@ -229,7 +232,10 @@ class Game {
 	private function setup() {
 		eventDispatcher = new EventDispatcher();
 		timeModifier = 1.0;
-		_statsTimer = 3.0;
+		_statsTimer = STATS_TIMER;
+		_dayTimer = DAY_TIMER;
+		totalTime = 0.0;
+
 		this._log = cast StateManager.current.setArray(LOG_STATE, []);
 
         _setupRelicStates();
@@ -342,24 +348,30 @@ class Game {
         }
 	}
 
-	public function update(dt:Float) {
-		_update(dt * this.timeModifier);
+	public function update(dt:Float) {		
+		this._update(dt * this.timeModifier);
 	}
 
 	private inline function _update(explicitDt:Float):Void {
-		_updateStatsTimer(explicitDt);
+		this._updateTimers(explicitDt);
 		totalTime += explicitDt;
 	}
 
-	private inline function _updateStatsTimer(dt:Float) {
-		_statsTimer -= dt;
-		if (_statsTimer <= 0) {
-			_statsTimer += STATS_TIMER;
-			dispatchEvent(new GameEvent(GameEvent.UPDATE_STATS));
+	private inline function _updateTimers(dt:Float) {
+		this._dayTimer -= dt;
+		this._statsTimer -= dt;
+		if (this._statsTimer <= 0) {
+			this._statsTimer += STATS_TIMER;
+			this.dispatchEvent(new GameEvent(GameEvent.UPDATE_STATS));
+		}
+
+		if (this._dayTimer <= 0) {
+			this._dayTimer += DAY_TIMER;
+			this.dispatchEvent(new GameEvent(GameEvent.UPDATE_TIME));
 		}
 	}
 
 	public inline function dispatchEvent(event:Event):Void {
-		eventDispatcher.dispatchEvent(event);
+		this.eventDispatcher.dispatchEvent(event);
 	}
 }

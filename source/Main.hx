@@ -32,6 +32,7 @@ class Main extends Sprite {
 
 		game.newGame();
 
+		lastFrameTime = Timer.stamp();
 		stage.addEventListener(Event.ENTER_FRAME, _onFrameUpdate);
 	}
 

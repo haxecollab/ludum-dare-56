@@ -29,6 +29,7 @@ class DebugHUD extends LayoutGroup {
 	private var _relicsList:RelicsList;
 	private var _favorList:FavorList;
 	private var _statusList:StatusList;
+	private var _timeView:TimeBox;
 
 	public var game(default, null):Game;
 
@@ -49,6 +50,7 @@ class DebugHUD extends LayoutGroup {
 		_setupFooterGroup();
 		_setupEventSubs();
 		_setupDataSync();
+
 	}
 
 	private function _onPopulationChange(e:GameEvent):Void {
@@ -86,10 +88,20 @@ class DebugHUD extends LayoutGroup {
 		_relicsList.validateRelics();
 	}
 
+	private function _onUpdateDayTime(e:GameEvent):Void{
+		_timeView.validateTime();
+	}
+
+	private function _onDiplomacyChanged(e:GameEvent):Void{
+		_favorList.updateDiplomacy();
+	}
+
 	private function _setupEventSubs():Void {
 		game.eventDispatcher.addEventListener(GameEvent.POPULATION_CHANGE, _onPopulationChange);
 		game.eventDispatcher.addEventListener(GameEvent.UPDATE_STATS, _onUpdateStats);
 		game.eventDispatcher.addEventListener(GameEvent.ACQUIRE_RELIC, _onAcquireRelic);
+		game.eventDispatcher.addEventListener(GameEvent.UPDATE_TIME, _onUpdateDayTime);
+		game.eventDispatcher.addEventListener(GameEvent.DIPLOMACY_CHANGE, _onDiplomacyChanged);
 	}
 
 	private function _setupListGroup():Void {
@@ -154,5 +166,8 @@ class DebugHUD extends LayoutGroup {
 
 		_statusList = new StatusList();
 		this._footerGroup.addChild(_statusList);
+
+		_timeView = new TimeBox();
+		this._footerGroup.addChild(_timeView);
 	}
 }
