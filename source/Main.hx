@@ -1,5 +1,13 @@
 package;
 
+import game.level.GameMap;
+import openfl.display.Stage;
+import game.enums.NPCBehavior;
+import game.asset.AudioData;
+import sound.SoundCollection;
+import sound.SoundAsset;
+import sound.SoundManager;
+import lime.media.AudioManager;
 import haxe.Timer;
 import openfl.events.Event;
 import game.object.Game;
@@ -17,18 +25,34 @@ class Main extends Sprite {
 	var game:Game;
 	var lastFrameTime:Float = 0;
 
+	public var gameStage:Sprite;
+	public var gameMap:GameMap;
 	public function new() {
 		super();	
 		
 		openflRoot = this;
 		addChild(new FlxGame(1280, 720, InitState, 60, 60, true));
+		AssetManager.init();
+		StateManager.init();
+
+		#if html5
+		SoundManager.playBGM(AudioData.BACKGROUND_TRACK_0_MP3);
+		#else
+		SoundManager.playBGM(AudioData.BACKGROUND_TRACK_0_OGG);
+		#end
+
+		
 	}
 
 	private function loadRoot():Void{
-		AssetManager.init();
-		StateManager.init();
-		game = new Game();		
-		addChild(new DebugHUD(game));
+		gameStage = new Sprite();
+		
+		game = new Game();
+		gameMap = new GameMap(game);	
+		
+		FlxG.addChildBelowMouse(gameStage);
+		gameStage.addChild(gameMap);
+		//gameStage.addChild(new DebugHUD(game));
 
 		game.newGame();
 

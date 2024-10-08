@@ -4,7 +4,7 @@
 I typed everything for my entry by hand except for the GameBanana link and I'm typing this description fourth to last with the Pixilart one being last.
 
 ## Role
-TBD (Hoping for any art role.)
+Programmer, Game Design
 
 
 ## Personal Links

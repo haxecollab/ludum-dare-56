@@ -4,7 +4,7 @@
 Game dev, Haxe programmer and gamer. Worked on Friday Night Funkin' mods. Currently developing Undertale Purple.
 
 ## Role
-TBD
+Game Design
 
 
 ## Personal Links

@@ -4,7 +4,7 @@
 HaxeFlixel and Roblox Studio Developer, maybe even a little bit of C#
 
 ## Role
-Programmer
+Game Design
 
 
 ## Personal Links

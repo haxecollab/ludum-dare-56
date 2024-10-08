@@ -63,7 +63,7 @@ class StatusList extends LayoutGroup {
 		updateStats(0, 0, 0, 0, 0);
 	}
 
-	public function updateStats(population:Int, illness:Float, resources:Int, morale:Float, gloom:Int):Void {
+	public function updateStats(population:Int, illness:Float, resources:Int, morale:Float, gloom:Float):Void {
 		this._populationLabel.text = 'Population($population)';
 		this._illnessLabel.text = 'Illness($illness)';
 		this._resourcesLabel.text = 'Resources($resources)';

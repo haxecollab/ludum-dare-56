@@ -4,7 +4,7 @@
 Beginner graphics programmer and IT college student.
 
 ## Role
-TBD
+Game Design
 
 
 ## Personal Links

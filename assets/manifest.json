@@ -23,8 +23,46 @@
 	],
 	"imageData":[
 		{
+			"id":"map_bg",
+			"data":"images/background/play_map.png"
+		},
+		{
 			"id":"dialogue_icon",
 			"data":"images/icons/dialogue_icon.png"
+		},
+		{
+			"id":"leaf_sprite_0",
+			"data":"images/sprites/leaf_sprite_0.png"
+		},
+		{
+			"id":"turtle_sprite_0",
+			"data":"images/sprites/turtle_sprite_0.png"
+		},
+		{
+			"id":"fire_sprite_0",
+			"data":"images/sprites/fire_sprite_0.png"
+		},
+		{
+			"id":"ice_sprite_0",
+			"data":"images/sprites/ice_sprite_0.png"
+		},
+		{
+			"id":"water_sprite_0",
+			"data":"images/sprites/water_sprite_0.png"
+		},
+		{
+			"id":"pebble_sprite_0",
+			"data":"images/sprites/pebble_sprite_0.png"
+		}
+	],
+	"audioData":[
+		{
+			"id":"background_track_0_mp3",
+			"data":"audio/bgm/Little_Creatures v2_(master).mp3"
+		},
+		{
+			"id":"background_track_0_oga",
+			"data":"audio/bgm/Little_Creatures_v2_(master).ogg"
 		}
 	]
 }
