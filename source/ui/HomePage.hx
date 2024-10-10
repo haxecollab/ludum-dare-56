@@ -1,7 +1,5 @@
 package ui;
 
-import haxe.ui.events.MouseEvent;
-
 @:xml('
 <vbox width="100%" height="100%">
 	<vbox id="mainbox" horizontalAlign="center" verticalAlign="center">
@@ -62,14 +60,4 @@ import haxe.ui.events.MouseEvent;
 	</style>
 </vbox>
 ')
-class HomePage extends haxe.ui.containers.VBox {
-	@:bind(github, MouseEvent.MOUSE_DOWN)
-	function onGithub(_) {
-		FlxG.openURL("https://github.com/haxecollab/ludum-dare-56");
-	}
-
-	@:bind(play, MouseEvent.MOUSE_DOWN)
-	function onPlay(_) {
-		FlxG.switchState(() -> new PlayState());
-	}
-}
+class HomePage extends haxe.ui.containers.VBox {}
